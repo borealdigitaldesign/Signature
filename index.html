@@ -34,7 +34,8 @@ body{
 }
 
 button,
-a{
+a,
+summary{
   font-family:Georgia,"Times New Roman",serif;
 }
 
@@ -363,6 +364,74 @@ img{
 
 
 /* =========================================================
+   ORDER OF THE DAY
+========================================================= */
+
+.order-section{
+  padding:78px 25px 82px;
+  background:#f7f4ee;
+  text-align:center;
+}
+
+.order-intro{
+  max-width:550px;
+  margin:0 auto 38px;
+}
+
+.order-list{
+  max-width:600px;
+  margin:0 auto;
+  text-align:left;
+}
+
+.order-item{
+  display:grid;
+  grid-template-columns:42px 1fr;
+  column-gap:16px;
+  position:relative;
+  padding:0 0 28px;
+  margin-bottom:25px;
+  border-bottom:1px solid #ddd6c9;
+}
+
+.order-item:last-child{
+  margin-bottom:0;
+  padding-bottom:0;
+  border-bottom:none;
+}
+
+.order-dot{
+  width:24px;
+  height:24px;
+  margin:3px auto 0;
+  border-radius:50%;
+  background:#a1a58a;
+  border:6px solid #ece9de;
+  box-shadow:
+    0 0 0 1px #d8d0bf;
+}
+
+.order-time{
+  margin:0 0 7px;
+  color:#403d34;
+  font-family:
+    "Baskerville",
+    "Times New Roman",
+    Georgia,
+    serif;
+  font-size:21px;
+  font-weight:bold;
+}
+
+.order-description{
+  margin:0;
+  color:#7b7465;
+  font-size:14px;
+  line-height:1.65;
+}
+
+
+/* =========================================================
    PHOTO GALLERY
 ========================================================= */
 
@@ -489,60 +558,91 @@ img{
 
 
 /* =========================================================
-   DETAILS / INFO
+   DRESS CODE
 ========================================================= */
 
-.info-section{
-  padding:78px 18px 82px;
-  background:#f7f4ee;
+.dress-section{
+  padding:82px 22px 85px;
+  background:#eeeadf;
   text-align:center;
 }
 
-.info-list{
-  max-width:600px;
-  margin:32px auto 0;
+.dress-description{
+  max-width:540px;
+  margin:24px auto 0;
+  color:#756d5e;
+  font-size:15px;
+  line-height:1.75;
 }
 
-.info-item{
-  padding:24px 21px;
-  margin-bottom:12px;
-  background:#fffdf9;
-  border:1px solid #e2d9ca;
-  border-radius:18px;
-  text-align:left;
-  box-shadow:
-    0 5px 20px rgba(70,55,35,.045);
-}
-
-.info-question{
-  margin:0;
-  color:#403d34;
-  font-family:
-    "Baskerville",
-    "Times New Roman",
-    Georgia,
-    serif;
-  font-size:19px;
-  font-weight:bold;
-  line-height:1.35;
-}
-
-.info-answer{
-  margin:11px 0 0;
-  color:#797160;
-  font-size:14px;
+.dress-note{
+  max-width:500px;
+  margin:22px auto 0;
+  color:#514b3f;
+  font-size:12px;
   line-height:1.7;
+}
+
+.dress-note strong{
+  color:#403d34;
+}
+
+.color-title{
+  margin:34px 0 17px;
+  color:#9b8865;
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+}
+
+.color-palette{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:15px;
+  margin:0 auto;
+}
+
+.color-circle{
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  border:1px solid rgba(80,70,50,.18);
+  box-shadow:
+    0 5px 14px rgba(65,53,35,.12);
+}
+
+/* Suggested palette */
+
+.color-sage{
+  background:#a1a58a;
+}
+
+.color-ivory{
+  background:#e9e3cf;
+}
+
+.color-gold{
+  background:#ad914f;
+}
+
+.color-taupe{
+  background:#756d59;
+}
+
+.color-white{
+  background:#fffdf8;
 }
 
 
 /* =========================================================
-   DRESS CODE / REGISTRY / RSVP
+   REGISTRY / GIFTS / CALENDAR
 ========================================================= */
 
 .link-section{
   padding:76px 22px 82px;
   text-align:center;
-  background:#eeeadf;
+  background:#f7f4ee;
 }
 
 .link-card{
@@ -629,7 +729,7 @@ img{
 
 
 /* =========================================================
-   TALLY RSVP
+   ONLINE RSVP
 ========================================================= */
 
 .tally-section{
@@ -657,6 +757,92 @@ img{
   border:none;
   display:block;
   border-radius:15px;
+}
+
+
+/* =========================================================
+   GOOD TO KNOW — ACCORDION
+========================================================= */
+
+.info-section{
+  padding:82px 18px 88px;
+  background:#f7f4ee;
+  text-align:center;
+}
+
+.info-intro{
+  max-width:540px;
+  margin:0 auto 34px;
+}
+
+.info-list{
+  max-width:600px;
+  margin:0 auto;
+  text-align:left;
+}
+
+.info-item{
+  margin-bottom:11px;
+  background:#fffdf9;
+  border:1px solid #ded5c5;
+  border-radius:17px;
+  overflow:hidden;
+  box-shadow:
+    0 5px 20px rgba(70,55,35,.045);
+}
+
+.info-item:last-child{
+  margin-bottom:0;
+}
+
+.info-question{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  padding:21px 21px;
+  cursor:pointer;
+  list-style:none;
+  color:#403d34;
+  font-family:
+    "Baskerville",
+    "Times New Roman",
+    Georgia,
+    serif;
+  font-size:18px;
+  font-weight:bold;
+  line-height:1.35;
+}
+
+.info-question::-webkit-details-marker{
+  display:none;
+}
+
+.info-question::after{
+  content:"+";
+  flex-shrink:0;
+  color:#a08b69;
+  font-size:23px;
+  font-weight:normal;
+  line-height:1;
+  transition:transform .3s ease;
+}
+
+.info-item[open] .info-question::after{
+  transform:rotate(45deg);
+}
+
+.info-answer{
+  margin:0;
+  padding:0 21px 22px;
+  color:#797160;
+  font-size:14px;
+  line-height:1.7;
+}
+
+.info-item[open] .info-question{
+  color:#514b3f;
 }
 
 
@@ -770,6 +956,30 @@ img{
     font-size:22px;
   }
 
+  .order-section{
+    padding:65px 18px 72px;
+  }
+
+  .order-item{
+    grid-template-columns:35px 1fr;
+    column-gap:12px;
+    padding-bottom:24px;
+    margin-bottom:23px;
+  }
+
+  .order-dot{
+    width:22px;
+    height:22px;
+  }
+
+  .order-time{
+    font-size:19px;
+  }
+
+  .order-description{
+    font-size:13px;
+  }
+
   .gallery-section{
     padding-left:12px;
     padding-right:12px;
@@ -792,17 +1002,37 @@ img{
     font-size:28px;
   }
 
+  .dress-section{
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .dress-description{
+    font-size:14px;
+  }
+
+  .color-palette{
+    gap:10px;
+  }
+
+  .color-circle{
+    width:34px;
+    height:34px;
+  }
+
   .info-section{
     padding-left:12px;
     padding-right:12px;
   }
 
-  .info-item{
-    padding:21px 18px;
+  .info-question{
+    padding:19px 18px;
+    font-size:17px;
   }
 
-  .info-question{
-    font-size:18px;
+  .info-answer{
+    padding:0 18px 20px;
+    font-size:13.5px;
   }
 
   .link-section{
@@ -1037,6 +1267,114 @@ img{
 
 
   <!-- =====================================================
+       ORDER OF THE DAY
+  ====================================================== -->
+
+  <section class="order-section reveal">
+
+    <div class="order-intro">
+
+      <p class="section-kicker">
+        Order of the day
+      </p>
+
+      <h2 class="section-title">
+        A day to remember
+      </h2>
+
+    </div>
+
+
+    <div class="order-list">
+
+
+      <div class="order-item">
+
+        <div class="order-dot"></div>
+
+        <div>
+
+          <p class="order-time">
+            4:30 PM · Ceremony
+          </p>
+
+          <p class="order-description">
+            Join us as we say “I do” and begin
+            this beautiful new chapter together.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="order-item">
+
+        <div class="order-dot"></div>
+
+        <div>
+
+          <p class="order-time">
+            5:15 PM · Cocktails
+          </p>
+
+          <p class="order-description">
+            Raise a glass, enjoy a little something
+            to sip, and celebrate with us.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="order-item">
+
+        <div class="order-dot"></div>
+
+        <div>
+
+          <p class="order-time">
+            7:00 PM · Dinner
+          </p>
+
+          <p class="order-description">
+            Good food, great company, and a table
+            full of the people we love.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="order-item">
+
+        <div class="order-dot"></div>
+
+        <div>
+
+          <p class="order-time">
+            9:30 PM · Dancing
+          </p>
+
+          <p class="order-description">
+            Time to celebrate, dance, laugh,
+            and make memories together.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
        GALLERY
   ====================================================== -->
 
@@ -1208,126 +1546,67 @@ img{
 
 
   <!-- =====================================================
-       DETAILS TO KEEP IN MIND
-  ====================================================== -->
-
-  <section class="info-section reveal">
-
-    <p class="section-kicker">
-      Good to know
-    </p>
-
-    <h2 class="section-title">
-      Details to Keep in Mind
-    </h2>
-
-
-    <div class="info-list">
-
-
-      <!-- CHILDREN -->
-
-      <div class="info-item">
-
-        <h3 class="info-question">
-          ▾ Can we bring the kids?
-        </h3>
-
-        <p class="info-answer">
-          We absolutely love your little ones,
-          but this celebration will be an
-          adults-only event. We hope you enjoy
-          the evening with us!
-        </p>
-
-      </div>
-
-
-      <!-- UNPLUGGED CEREMONY -->
-
-      <div class="info-item">
-
-        <h3 class="info-question">
-          ▾ Unplugged ceremony?
-        </h3>
-
-        <p class="info-answer">
-          We kindly ask that you put your
-          phones away during the ceremony
-          so everyone can be fully present
-          for this special moment.
-        </p>
-
-      </div>
-
-
-      <!-- ARRIVAL -->
-
-      <div class="info-item">
-
-        <h3 class="info-question">
-          ▾ When should we arrive?
-        </h3>
-
-        <p class="info-answer">
-          Please plan to arrive a little early
-          so you have time to park, get settled,
-          and be ready when the celebration begins.
-        </p>
-
-      </div>
-
-
-      <!-- DATE -->
-
-      <div class="info-item">
-
-        <h3 class="info-question">
-          ▾ What should I bring?
-        </h3>
-
-        <p class="info-answer">
-          Bring your dancing shoes, your best
-          wishes, and get ready to celebrate
-          with us!
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =====================================================
        DRESS CODE
   ====================================================== -->
 
-  <section class="link-section reveal">
+  <section class="dress-section reveal">
 
     <p class="section-kicker">
       Dress code
     </p>
 
     <h2 class="section-title">
-      What to Wear
+      Garden Formal
     </h2>
 
 
-    <div class="link-card">
+    <p class="dress-description">
+      Long dresses and light suits are welcome —
+      elegant, effortless, and perfect for an
+      evening surrounded by nature.
+    </p>
 
-      <div class="link-block">
 
-        <span class="link-block-title">
-          Dress Code
-        </span>
+    <p class="dress-note">
+      <strong>Kindly note:</strong>
+      White and ivory are reserved for the bride.
+      We invite you to choose from the suggested
+      tones below.
+    </p>
 
-        <span class="link-block-subtitle">
-          Formal / Wedding Attire
-        </span>
 
-      </div>
+    <p class="color-title">
+      Suggested colors
+    </p>
+
+
+    <div class="color-palette"
+         aria-label="Suggested wedding colors">
+
+      <span
+        class="color-circle color-sage"
+        aria-label="Sage green">
+      </span>
+
+      <span
+        class="color-circle color-ivory"
+        aria-label="Soft ivory">
+      </span>
+
+      <span
+        class="color-circle color-gold"
+        aria-label="Warm gold">
+      </span>
+
+      <span
+        class="color-circle color-taupe"
+        aria-label="Taupe">
+      </span>
+
+      <span
+        class="color-circle color-white"
+        aria-label="White reserved for the bride">
+      </span>
 
     </div>
 
@@ -1488,6 +1767,105 @@ img{
         loading="lazy"
         title="Kylie & Jackson Online RSVP">
       </iframe>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       GOOD TO KNOW
+       ACCORDION
+  ====================================================== -->
+
+  <section class="info-section reveal">
+
+    <div class="info-intro">
+
+      <p class="section-kicker">
+        Good to know
+      </p>
+
+      <h2 class="section-title">
+        Details to Keep in Mind
+      </h2>
+
+    </div>
+
+
+    <div class="info-list">
+
+
+      <!-- CHILDREN -->
+
+      <details class="info-item">
+
+        <summary class="info-question">
+          Can we bring the kids?
+        </summary>
+
+        <p class="info-answer">
+          We absolutely love your little ones,
+          but this celebration will be an
+          adults-only event. We hope you enjoy
+          the evening with us!
+        </p>
+
+      </details>
+
+
+      <!-- UNPLUGGED CEREMONY -->
+
+      <details class="info-item">
+
+        <summary class="info-question">
+          Unplugged ceremony?
+        </summary>
+
+        <p class="info-answer">
+          We kindly ask that you put your
+          phones away during the ceremony
+          so everyone can be fully present
+          for this special moment.
+        </p>
+
+      </details>
+
+
+      <!-- ARRIVAL -->
+
+      <details class="info-item">
+
+        <summary class="info-question">
+          When should we arrive?
+        </summary>
+
+        <p class="info-answer">
+          Please plan to arrive a little early
+          so you have time to park, get settled,
+          and be ready when the celebration begins.
+        </p>
+
+      </details>
+
+
+      <!-- WHAT TO BRING -->
+
+      <details class="info-item">
+
+        <summary class="info-question">
+          What should I bring?
+        </summary>
+
+        <p class="info-answer">
+          Bring your dancing shoes, your best
+          wishes, and get ready to celebrate
+          with us!
+        </p>
+
+      </details>
+
 
     </div>
 
