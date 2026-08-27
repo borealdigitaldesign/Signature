@@ -12,9 +12,9 @@ button,a,summary{font-family:Georgia,"Times New Roman",serif}
 img{max-width:100%}
 
 /* OPENING */
-#opening{position:fixed;inset:0;z-index:10000;background:#f4ebe7;display:flex;align-items:center;justify-content:center;padding:22px;transition:opacity 1s ease,visibility 1s ease}
+#opening{position:fixed;inset:0;z-index:10000;background:#f4ebe7;display:flex;align-items:center;justify-content:center;padding:22px;overflow:hidden;transition:opacity 1s ease,visibility 1s ease}
 #opening.hide{opacity:0;visibility:hidden;pointer-events:none}
-.opening-card{width:min(100%,520px);text-align:center}
+.opening-card{position:relative;z-index:3;width:min(100%,520px);text-align:center}
 .opening-content{padding:20px 20px 10px}
 .opening-small{margin:0 0 15px;color:#9b7377;font-size:10px;letter-spacing:4px;text-transform:uppercase}
 .opening-names{margin:0;color:#4d4142;font-family:"Baskerville","Times New Roman",Georgia,serif;font-size:clamp(42px,10vw,62px);font-weight:normal;line-height:1.05}
@@ -22,6 +22,29 @@ img{max-width:100%}
 .opening-date{margin:16px 0 28px;color:#806d70;font-size:11px;letter-spacing:2.5px;text-transform:uppercase}
 .open-button{display:inline-block;min-width:180px;padding:12px 22px;border:1px solid #b8898b;border-radius:30px;background:rgba(255,255,255,.82);color:#76565e;text-decoration:none;font-size:10px;letter-spacing:2px;cursor:pointer;box-shadow:0 5px 18px rgba(100,65,70,.08);transition:transform .25s ease,background .25s ease}
 .open-button:hover{transform:translateY(-2px);background:#fff}
+
+/* OPENING ROSE PETALS */
+.opening-petals{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none}
+.opening-petal{position:absolute;top:-30px;width:9px;height:13px;background:linear-gradient(135deg,#c98288,#9f4f58);border-radius:100% 0 100% 0;opacity:0;filter:drop-shadow(0 2px 3px rgba(80,40,45,.12));animation:openingPetalFall linear infinite,openingPetalSway ease-in-out infinite}
+.opening-petal:nth-child(1){left:8%;animation-duration:8s,3.5s;animation-delay:0s,.5s;transform:rotate(25deg)}
+.opening-petal:nth-child(2){left:20%;animation-duration:11s,4s;animation-delay:2s,1s;transform:scale(.7) rotate(55deg)}
+.opening-petal:nth-child(3){left:34%;animation-duration:9s,3.2s;animation-delay:4s,.2s;transform:scale(.8) rotate(15deg)}
+.opening-petal:nth-child(4){left:50%;animation-duration:12s,4.5s;animation-delay:1s,1.5s;transform:scale(.65) rotate(70deg)}
+.opening-petal:nth-child(5){left:66%;animation-duration:9.5s,3.8s;animation-delay:3s,.4s;transform:scale(.85) rotate(35deg)}
+.opening-petal:nth-child(6){left:79%;animation-duration:11s,4.2s;animation-delay:5s,1.2s;transform:scale(.7) rotate(65deg)}
+.opening-petal:nth-child(7){left:91%;animation-duration:10s,3.6s;animation-delay:1.5s,.8s;transform:scale(.75) rotate(20deg)}
+.opening-petal:nth-child(8){left:43%;animation-duration:13s,4.4s;animation-delay:6s,1.7s;transform:scale(.55) rotate(80deg)}
+@keyframes openingPetalFall{
+0%{top:-30px;opacity:0}
+12%{opacity:.45}
+82%{opacity:.35}
+100%{top:110%;opacity:0}
+}
+@keyframes openingPetalSway{
+0%{margin-left:-12px}
+50%{margin-left:22px}
+100%{margin-left:-12px}
+}
 
 /* MAIN */
 #mainInvitation{display:none}
@@ -43,20 +66,17 @@ img{max-width:100%}
 .petal:nth-child(8){left:88%;animation-duration:12.5s,4.4s;animation-delay:4.5s,1.7s;transform:scale(.65) rotate(25deg)}
 .petal:nth-child(9){left:21%;animation-duration:14s,4s;animation-delay:7s,.6s;transform:scale(.55) rotate(80deg)}
 .petal:nth-child(10){left:71%;animation-duration:13.5s,4.7s;animation-delay:6s,1s;transform:scale(.6) rotate(15deg)}
-
 @keyframes petalFall{
 0%{top:-50px;opacity:0}
 10%{opacity:.78}
 85%{opacity:.72}
 100%{top:110%;opacity:0}
 }
-
 @keyframes petalSway{
 0%{margin-left:-10px}
 50%{margin-left:25px}
 100%{margin-left:-10px}
 }
-
 .hero-overlay{position:absolute;inset:0;z-index:5;display:flex;align-items:flex-end;justify-content:center;padding:0 25px 55px;background:linear-gradient(to bottom,rgba(0,0,0,0) 48%,rgba(65,45,48,.10) 72%,rgba(65,45,48,.30) 100%);pointer-events:none}
 .hero-names{color:white;text-align:center;text-shadow:0 2px 14px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.20)}
 .hero-names-script{display:block;margin-bottom:4px;font-family:"Snell Roundhand","Brush Script MT","Segoe Script",cursive;font-size:clamp(27px,8vw,48px);line-height:1}
@@ -175,6 +195,7 @@ img{max-width:100%}
 @media(max-width:600px){
 .opening-content{padding-top:18px}
 .opening-names{font-size:42px}
+.opening-petal{width:8px;height:12px}
 .hero{min-height:auto}
 .hero-image{min-height:auto}
 .hero-overlay{padding-bottom:30px}
@@ -220,6 +241,16 @@ img{max-width:100%}
 
 <!-- OPENING -->
 <section id="opening">
+<div class="opening-petals" aria-hidden="true">
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+</div>
 <div class="opening-card">
 <div class="opening-content">
 <p class="opening-small">Together with their families</p>
