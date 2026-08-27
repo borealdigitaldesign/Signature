@@ -1,33 +1,2882 @@
-<!-- =====================================================
-     FOOTER
-====================================================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-<footer class="footer reveal">
+<meta charset="UTF-8">
 
-  <p class="footer-script">
-    We can't wait to celebrate with you
-  </p>
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-  <p class="footer-message">
-    Thank you for being part of our story.
-    We are so excited to celebrate this
-    beautiful day surrounded by the people
-    we love most.
-  </p>
-
-  <p class="footer-names">
-    Kylie &amp; Jackson
-  </p>
+<title>Kylie & Jackson | Wedding Invitation</title>
 
 
-  <a
-    class="boreal-button"
-    href="https://borealdigitaldesign.github.io/"
-    target="_blank"
-    rel="noopener">
+<style>
 
-    Designed with love by Boreal Digital Design
+/* =========================================================
+   BASE
+========================================================= */
 
-  </a>
+*{
+  box-sizing:border-box;
+}
 
-</footer>
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  padding:0;
+  background:#f7f4ee;
+  color:#403d34;
+  font-family:Georgia,"Times New Roman",serif;
+  overflow-x:hidden;
+}
+
+button,
+a,
+summary{
+  font-family:Georgia,"Times New Roman",serif;
+}
+
+img{
+  max-width:100%;
+}
+
+
+/* =========================================================
+   OPENING
+========================================================= */
+
+#opening{
+  position:fixed;
+  inset:0;
+  z-index:10000;
+
+  background:#f3eee5;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:22px;
+
+  transition:
+    opacity 1s ease,
+    visibility 1s ease;
+}
+
+#opening.hide{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+}
+
+.opening-card{
+  width:min(100%,520px);
+  text-align:center;
+}
+
+.opening-content{
+  padding:20px 20px 10px;
+}
+
+.opening-small{
+  margin:0 0 15px;
+
+  color:#9a8765;
+
+  font-size:10px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+.opening-names{
+  margin:0;
+
+  color:#403d34;
+
+  font-family:
+    "Baskerville",
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size:clamp(42px,10vw,62px);
+  font-weight:normal;
+  line-height:1.05;
+}
+
+.opening-amp{
+  font-family:
+    "Snell Roundhand",
+    "Brush Script MT",
+    cursive;
+
+  font-size:.72em;
+  color:#a58b64;
+}
+
+.opening-date{
+  margin:16px 0 28px;
+
+  color:#766f61;
+
+  font-size:11px;
+  letter-spacing:2.5px;
+  text-transform:uppercase;
+}
+
+.open-button{
+  display:inline-block;
+
+  min-width:180px;
+
+  padding:12px 22px;
+
+  border:1px solid #a99673;
+  border-radius:30px;
+
+  background:rgba(255,255,255,.82);
+
+  color:#635843;
+
+  text-decoration:none;
+
+  font-size:10px;
+  letter-spacing:2px;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 5px 18px rgba(70,55,35,.08);
+
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.open-button:hover{
+  transform:translateY(-2px);
+  background:#fff;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+#mainInvitation{
+  display:none;
+}
+
+.invitation{
+  width:100%;
+  max-width:700px;
+  margin:0 auto;
+}
+
+
+/* =========================================================
+   HERO / COVER
+========================================================= */
+
+.hero{
+  position:relative;
+
+  width:100%;
+  min-height:100svh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:#f5f0e7;
+
+  overflow:hidden;
+}
+
+.hero-image{
+  width:100%;
+  height:auto;
+
+  min-height:100svh;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+
+/* ---------------------------------------------------------
+   HERO SOFT DESIGN OVERLAY
+--------------------------------------------------------- */
+
+.hero::after{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba(255,250,238,.05) 0%,
+      rgba(255,250,238,.14) 45%,
+      rgba(45,38,29,.18) 100%
+    );
+}
+
+
+/* =========================================================
+   FALLING PETALS
+========================================================= */
+
+.petals-container{
+  position:absolute;
+  inset:0;
+
+  z-index:4;
+
+  overflow:hidden;
+
+  pointer-events:none;
+}
+
+.petal{
+  position:absolute;
+
+  top:-50px;
+
+  width:10px;
+  height:15px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,250,242,.95),
+      rgba(218,198,168,.72)
+    );
+
+  border-radius:
+    100% 0 100% 0;
+
+  opacity:.78;
+
+  filter:
+    drop-shadow(
+      0 2px 3px rgba(70,55,35,.10)
+    );
+
+  animation:
+    petalFall linear infinite,
+    petalSway ease-in-out infinite;
+}
+
+.petal:nth-child(1){
+  left:5%;
+  animation-duration:9s,3.4s;
+  animation-delay:0s,.5s;
+  transform:rotate(15deg);
+}
+
+.petal:nth-child(2){
+  left:15%;
+  animation-duration:12s,4s;
+  animation-delay:2s,1s;
+  transform:scale(.7) rotate(40deg);
+}
+
+.petal:nth-child(3){
+  left:27%;
+  animation-duration:10s,3.2s;
+  animation-delay:4s,.2s;
+  transform:scale(.85) rotate(65deg);
+}
+
+.petal:nth-child(4){
+  left:39%;
+  animation-duration:13s,4.5s;
+  animation-delay:1s,1.5s;
+  transform:scale(.65) rotate(20deg);
+}
+
+.petal:nth-child(5){
+  left:52%;
+  animation-duration:9.5s,3.8s;
+  animation-delay:3s,.4s;
+  transform:scale(.9) rotate(70deg);
+}
+
+.petal:nth-child(6){
+  left:64%;
+  animation-duration:11s,4.2s;
+  animation-delay:5s,1.2s;
+  transform:scale(.7) rotate(35deg);
+}
+
+.petal:nth-child(7){
+  left:76%;
+  animation-duration:10.5s,3.6s;
+  animation-delay:1.5s,.8s;
+  transform:scale(.8) rotate(55deg);
+}
+
+.petal:nth-child(8){
+  left:88%;
+  animation-duration:12.5s,4.4s;
+  animation-delay:4.5s,1.7s;
+  transform:scale(.65) rotate(25deg);
+}
+
+.petal:nth-child(9){
+  left:21%;
+  animation-duration:14s,4s;
+  animation-delay:7s,.6s;
+  transform:scale(.55) rotate(80deg);
+}
+
+.petal:nth-child(10){
+  left:71%;
+  animation-duration:13.5s,4.7s;
+  animation-delay:6s,1s;
+  transform:scale(.6) rotate(15deg);
+}
+
+@keyframes petalFall{
+
+  0%{
+    top:-50px;
+    opacity:0;
+  }
+
+  10%{
+    opacity:.78;
+  }
+
+  85%{
+    opacity:.72;
+  }
+
+  100%{
+    top:110%;
+    opacity:0;
+  }
+
+}
+
+@keyframes petalSway{
+
+  0%{
+    margin-left:-10px;
+  }
+
+  50%{
+    margin-left:25px;
+  }
+
+  100%{
+    margin-left:-10px;
+  }
+
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.hero-overlay{
+  position:absolute;
+  inset:0;
+
+  z-index:5;
+
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+
+  padding:0 25px 55px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0) 48%,
+      rgba(48,42,33,.10) 72%,
+      rgba(48,42,33,.28) 100%
+    );
+
+  pointer-events:none;
+}
+
+.hero-names{
+  color:white;
+
+  text-align:center;
+
+  text-shadow:
+    0 2px 14px rgba(0,0,0,.25),
+    0 1px 3px rgba(0,0,0,.20);
+}
+
+.hero-names-script{
+  display:block;
+
+  margin-bottom:4px;
+
+  font-family:
+    "Snell Roundhand",
+    "Brush Script MT",
+    "Segoe Script",
+    cursive;
+
+  font-size:clamp(27px,8vw,48px);
+
+  line-height:1;
+}
+
+.hero-names-main{
+  font-family:
+    "Baskerville",
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size:clamp(30px,8vw,52px);
+
+  font-weight:normal;
+
+  letter-spacing:1px;
+}
+
+
+/* =========================================================
+   SIGNATURE BOTANICAL DIVIDER
+========================================================= */
+
+.page-divider{
+  position:relative;
+
+  padding:8px 12px 2px;
+
+  background:#f7f4ee;
+
+  text-align:center;
+
+  overflow:hidden;
+}
+
+.divider-decoration{
+  position:relative;
+
+  z-index:2;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  width:100%;
+
+  background:transparent;
+}
+
+.divider-decoration img{
+  display:block;
+
+  width:min(100%,300px);
+
+  height:auto;
+
+  margin:0 auto;
+
+  padding:0;
+
+  object-fit:contain;
+}
+
+
+/* =========================================================
+   SPECIAL DIVIDER BEFORE GALLERY
+========================================================= */
+
+.gallery-divider{
+  padding-top:22px;
+  padding-bottom:22px;
+
+  background:#f7f4ee;
+}
+
+
+/* =========================================================
+   ROMANTIC QUOTE
+========================================================= */
+
+.quote-section{
+  padding:4px 25px 68px;
+
+  text-align:center;
+
+  background:#f7f4ee;
+}
+
+.quote-small{
+  margin:0 0 13px;
+
+  color:#a08b69;
+
+  font-size:10px;
+
+  letter-spacing:4px;
+
+  text-transform:uppercase;
+}
+
+.quote{
+  max-width:560px;
+
+  margin:0 auto;
+
+  color:#514b3f;
+
+  font-family:
+    "Snell Roundhand",
+    "Brush Script MT",
+    "Segoe Script",
+    cursive;
+
+  font-size:clamp(29px,7vw,43px);
+
+  line-height:1.25;
+
+  font-weight:normal;
+}
+
+.quote-author{
+  margin:22px 0 0;
+
+  color:#817866;
+
+  font-size:10px;
+
+  letter-spacing:2.5px;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+.countdown-section{
+  padding:68px 20px 75px;
+
+  text-align:center;
+
+  background:#eeeadf;
+}
+
+.section-kicker{
+  margin:0 0 16px;
+
+  color:#9b8865;
+
+  font-size:10px;
+
+  letter-spacing:4px;
+
+  text-transform:uppercase;
+}
+
+.section-title{
+  margin:0;
+
+  color:#403d34;
+
+  font-family:
+    "Baskerville",
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size:clamp(31px,7vw,46px);
+
+  font-weight:normal;
+
+  line-height:1.15;
+}
+
+.countdown-date{
+  margin:14px 0 31px;
+
+  color:#766f61;
+
+  font-size:12px;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+}
+
+.countdown{
+  display:flex;
+
+  justify-content:center;
+
+  gap:8px;
+
+  max-width:500px;
+
+  margin:0 auto;
+}
+
+.countdown-box{
+  flex:1;
+
+  max-width:100px;
+
+  padding:13px 5px 12px;
+
+  background:rgba(255,255,255,.63);
+
+  border:1px solid #d0c4ad;
+
+  border-radius:10px;
+}
+
+.countdown-number{
+  display:block;
+
+  color:#5b5547;
+
+  font-size:25px;
+
+  line-height:1;
+
+  font-weight:normal;
+}
+
+.countdown-label{
+  display:block;
+
+  margin-top:7px;
+
+  color:#8a806e;
+
+  font-size:7px;
+
+  letter-spacing:1.3px;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   ORDER OF THE DAY
+========================================================= */
+
+.order-section{
+  padding:78px 25px 82px;
+
+  background:#f7f4ee;
+
+  text-align:center;
+}
+
+.order-intro{
+  max-width:550px;
+
+  margin:0 auto 38px;
+}
+
+.order-list{
+  max-width:600px;
+
+  margin:0 auto;
+
+  text-align:left;
+}
+
+.order-item{
+  display:grid;
+
+  grid-template-columns:42px 1fr;
+
+  column-gap:16px;
+
+  position:relative;
+
+  padding:0 0 28px;
+
+  margin-bottom:25px;
+
+  border-bottom:1px solid #ddd6c9;
+}
+
+.order-item:last-child{
+  margin-bottom:0;
+
+  padding-bottom:0;
+
+  border-bottom:none;
+}
+
+.order-dot{
+  width:24px;
+  height:24px;
+
+  margin:3px auto 0;
+
+  border-radius:50%;
+
+  background:#a1a58a;
+
+  border:6px solid #ece9de;
+
+  box-shadow:
+    0 0 0 1px #d8d0bf;
+}
+
+.order-time{
+  margin:0 0 7px;
+
+  color:#403d34;
+
+  font-family:
+    "Baskerville",
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size:21px;
+
+  font-weight:bold;
+}
+
+.order-description{
+  margin:0;
+
+  color:#7b7465;
+
+  font-size:14px;
+
+  line-height:1.65;
+}
+
+
+/* =========================================================
+   PHOTO GALLERY
+========================================================= */
+
+.gallery-section{
+  padding:75px 18px 80px;
+
+  background:#f7f4ee;
+
+  text-align:center;
+}
+
+.gallery-intro{
+  max-width:520px;
+
+  margin:0 auto 32px;
+}
+
+.gallery-grid{
+  display:grid;
+
+  grid-template-columns:repeat(2,1fr);
+
+  gap:10px;
+}
+
+.gallery-item{
+  overflow:hidden;
+
+  border-radius:2px;
+
+  background:#e8e1d5;
+}
+
+.gallery-item:first-child{
+  grid-column:span 2;
+}
+
+.gallery-item img{
+  width:100%;
+  height:100%;
+
+  display:block;
+
+  object-fit:cover;
+
+  transition:
+    transform .6s ease;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.025);
+}
+
+
+/* =========================================================
+   EVENT CARDS
+========================================================= */
+
+.event-section{
+  padding:75px 20px 82px;
+
+  background:#eeeadf;
+
+  text-align:center;
+}
+
+.event-section:nth-of-type(even){
+  background:#f7f4ee;
+}
+
+.event-card{
+  max-width:590px;
+
+  margin:32px auto 0;
+
+  padding:35px 24px 38px;
+
+  background:rgba(255,255,255,.55);
+
+  border:1px solid #d7ccb9;
+
+  border-radius:24px;
+}
+
+.event-icon{
+  width:55px;
+  height:55px;
+
+  margin:0 auto 19px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid #cdbd9f;
+
+  border-radius:50%;
+
+  color:#a08a63;
+
+  font-size:22px;
+}
+
+.event-name{
+  margin:0 0 9px;
+
+  color:#403d34;
+
+  font-family:
+    "Baskerville",
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size:31px;
+
+  font-weight:normal;
+}
+
+.event-time{
+  margin:0 0 16px;
+
+  color:#a08b69;
+
+  font-size:10px;
+
+  letter-spacing:2.2px;
+
+  text-transform:uppercase;
+}
+
+.event-location{
+  margin:0 auto 23px;
+
+  max-width:430px;
+
+  color:#756d5e;
+
+  font-size:14px;
+
+  line-height:1.7;
+}
+
+.map-button{
+  display:inline-block;
+
+  padding:11px 22px;
+
+  border:1px solid #a99673;
+
+  border-radius:25px;
+
+  background:#fff;
+
+  color:#675b46;
+
+  text-decoration:none;
+
+  font-size:9px;
+
+  letter-spacing:1.8px;
+
+  transition:
+    transform .25s ease;
+}
+
+.map-button:hover{
+  transform:translateY(-2px);
+}
+
+
+/* =========================================================
+   DRESS CODE
+========================================================= */
+
+.dress-section{
+  padding:82px 22px 85px;
+
+  background:#eeeadf;
+
+  text-align:center;
+}
+
+.dress-description{
+  max-width:540px;
+
+  margin:24px auto 0;
+
+  color:#756d5e;
+
+  font-size:15px;
+
+  line-height:1.75;
+}
+
+.dress-note{
+  max-width:500px;
+
+  margin:22px auto 0;
+
+  color:#514b3f;
+
+  font-size:12px;
+
+  line-height:1.7;
+}
+
+.dress-note strong{
+  color:#403d34;
+}
+
+.color-title{
+  margin:34px 0 17px;
+
+  color:#9b8865;
+
+  font-size:9px;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+}
+
+.color-palette{
+  display:flex;
+
+  justify-content:center;
+  align-items:center;
+
+  gap:15px;
+
+  margin:0 auto;
+}
+
+.color-circle{
+  width:38px;
+  height:38px;
+
+  border-radius:50%;
+
+  border:1px solid rgba(80,70,50,.18);
+
+  box-shadow:
+    0 5px 14px rgba(65,53,35,.12);
+}
+
+.color-sage{
+  background:#a1a58a;
+}
+
+.color-ivory{
+  background:#e9e3cf;
+}
+
+.color-gold{
+  background:#ad914f;
+}
+
+.color-taupe{
+  background:#756d59;
+}
+
+.color-white{
+  background:#fffdf8;
+}
+
+
+/* =========================================================
+   REGISTRY / GIFTS / CALENDAR
+========================================================= */
+
+.link-section{
+  padding:76px 22px 82px;
+
+  text-align:center;
+
+  background:#f7f4ee;
+}
+
+.link-card{
+  max-width:560px;
+
+  margin:31px auto 0;
+}
+
+.link-block{
+  display:block;
+
+  padding:20px 20px;
+
+  margin-bottom:12px;
+
+  background:rgba(255,255,255,.72);
+
+  border:1px solid #d5c8b1;
+
+  border-radius:18px;
+
+  color:#403d34;
+
+  text-decoration:none;
+
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.link-block:hover{
+  transform:translateY(-2px);
+
+  background:#fff;
+}
+
+.link-block-title{
+  display:block;
+
+  margin-bottom:5px;
+
+  font-family:
+    "Baskerville",
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size:19px;
+}
+
+.link-block-subtitle{
+  display:block;
+
+  color:#827865;
+
+  font-size:10px;
+
+  letter-spacing:1.5px;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   RSVP
+========================================================= */
+
+.rsvp-section{
+  padding:78px 18px 80px;
+
+  background:#f7f4ee;
+
+  text-align:center;
+}
+
+.rsvp-buttons{
+  max-width:500px;
+
+  margin:31px auto 0;
+}
+
+.rsvp-button{
+  display:block;
+
+  width:100%;
+
+  margin-bottom:12px;
+
+  padding:15px 18px;
+
+  border:1px solid #a99673;
+
+  border-radius:30px;
+
+  background:#fffdf9;
+
+  color:#655943;
+
+  text-decoration:none;
+
+  font-size:10px;
+
+  letter-spacing:2px;
+
+  text-transform:uppercase;
+
+  transition:
+    transform .25s ease,
+    background .25s ease;
+}
+
+.rsvp-button:hover{
+  transform:translateY(-2px);
+
+  background:#fff;
+}
+
+
+/* =========================================================
+   RSVP NOTE
+========================================================= */
+
+.rsvp-note{
+  max-width:470px;
+
+  margin:26px auto 0;
+
+  color:#817866;
+
+  font-size:12px;
+
+  line-height:1.7;
+
+  font-style:italic;
+}
+
+
+/* =========================================================
+   GOOD TO KNOW — ACCORDION
+========================================================= */
+
+.info-section{
+  padding:82px 18px 88px;
+
+  background:#f7f4ee;
+
+  text-align:center;
+}
+
+.info-intro{
+  max-width:540px;
+
+  margin:0 auto 34px;
+}
+
+.info-list{
+  max-width:600px;
+
+  margin:0 auto;
+
+  text-align:left;
+}
+
+.info-item{
+  margin-bottom:11px;
+
+  background:#fffdf9;
+
+  border:1px solid #ded5c5;
+
+  border-radius:17px;
+
+  overflow:hidden;
+
+  box-shadow:
+    0 5px 20px rgba(70,55,35,.045);
+}
+
+.info-item:last-child{
+  margin-bottom:0;
+}
+
+.info-question{
+  position:relative;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  gap:15px;
+
+  padding:21px 21px;
+
+  cursor:pointer;
+
+  list-style:none;
+
+  color:#403d34;
+
+  font-family:
+    "Baskerville",
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size:18px;
+
+  font-weight:bold;
+
+  line-height:1.35;
+}
+
+.info-question::-webkit-details-marker{
+  display:none;
+}
+
+.info-question::after{
+  content:"+";
+
+  flex-shrink:0;
+
+  color:#a08b69;
+
+  font-size:23px;
+
+  font-weight:normal;
+
+  line-height:1;
+
+  transition:
+    transform .3s ease;
+}
+
+.info-item[open] .info-question::after{
+  transform:rotate(45deg);
+}
+
+.info-answer{
+  margin:0;
+
+  padding:0 21px 22px;
+
+  color:#797160;
+
+  font-size:14px;
+
+  line-height:1.7;
+}
+
+.info-item[open] .info-question{
+  color:#514b3f;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+  padding:85px 25px 105px;
+
+  background:#f3eee5;
+
+  text-align:center;
+}
+
+.footer-script{
+  margin:0;
+
+  color:#9a8462;
+
+  font-family:
+    "Snell Roundhand",
+    "Brush Script MT",
+    "Segoe Script",
+    cursive;
+
+  font-size:44px;
+
+  font-weight:normal;
+}
+
+.footer-message{
+  max-width:450px;
+
+  margin:17px auto 0;
+
+  color:#746c5d;
+
+  font-size:13px;
+
+  line-height:1.7;
+}
+
+.footer-names{
+  margin:26px 0 0;
+
+  color:#403d34;
+
+  font-family:
+    "Baskerville",
+    "Times New Roman",
+    Georgia,
+    serif;
+
+  font-size:12px;
+
+  letter-spacing:3px;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================================================
+   BOREAL DIGITAL DESIGN
+========================================================= */
+
+.boreal-button{
+  display:block;
+
+  width:min(100%,560px);
+
+  margin:32px auto 0;
+
+  padding:15px 24px;
+
+  background:#303129;
+
+  color:#ffffff;
+
+  border:none;
+
+  border-radius:30px;
+
+  text-decoration:none;
+
+  text-align:center;
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:10px;
+
+  letter-spacing:1.8px;
+
+  transition:
+    transform .25s ease,
+    background .25s ease,
+    box-shadow .25s ease;
+}
+
+.boreal-button:hover{
+  transform:translateY(-2px);
+
+  background:#24251f;
+
+  box-shadow:
+    0 6px 18px rgba(50,45,35,.15);
+}
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+#musicButton{
+  position:fixed;
+
+  right:18px;
+  bottom:20px;
+
+  z-index:9000;
+
+  width:52px;
+  height:52px;
+
+  border:1px solid rgba(153,132,93,.45);
+
+  border-radius:50%;
+
+  background:rgba(255,253,249,.92);
+
+  color:#806c4b;
+
+  font-size:19px;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 5px 18px rgba(60,48,32,.14);
+
+  backdrop-filter:blur(5px);
+
+  -webkit-backdrop-filter:blur(5px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+  .opening-content{
+    padding-top:18px;
+  }
+
+  .opening-names{
+    font-size:42px;
+  }
+
+  .hero{
+    min-height:auto;
+  }
+
+  .hero-image{
+    min-height:auto;
+  }
+
+  .hero-overlay{
+    padding-bottom:30px;
+  }
+
+  .petal{
+    width:8px;
+    height:12px;
+  }
+
+
+  /* -------------------------------------------------------
+     COMPACT BOTANICAL DIVIDER
+  ------------------------------------------------------- */
+
+  .page-divider{
+    padding:7px 10px 1px;
+  }
+
+  .divider-decoration img{
+    width:min(100%,300px);
+
+    padding:0;
+  }
+
+  .gallery-divider{
+    padding-top:25px;
+    padding-bottom:25px;
+  }
+
+
+  /* -------------------------------------------------------
+     QUOTE CLOSE TO DIVIDER
+  ------------------------------------------------------- */
+
+  .quote-section{
+    padding:2px 25px 65px;
+  }
+
+  .quote-small{
+    margin-bottom:13px;
+  }
+
+
+  .countdown-section{
+    padding:60px 12px 65px;
+  }
+
+  .countdown{
+    gap:5px;
+  }
+
+  .countdown-box{
+    padding:11px 3px;
+  }
+
+  .countdown-number{
+    font-size:22px;
+  }
+
+  .order-section{
+    padding:65px 18px 72px;
+  }
+
+  .order-item{
+    grid-template-columns:35px 1fr;
+
+    column-gap:12px;
+
+    padding-bottom:24px;
+
+    margin-bottom:23px;
+  }
+
+  .order-dot{
+    width:22px;
+    height:22px;
+  }
+
+  .order-time{
+    font-size:19px;
+  }
+
+  .order-description{
+    font-size:13px;
+  }
+
+  .gallery-section{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .gallery-grid{
+    gap:7px;
+  }
+
+  .event-section{
+    padding-left:14px;
+    padding-right:14px;
+  }
+
+  .event-card{
+    padding:30px 18px 32px;
+  }
+
+  .event-name{
+    font-size:28px;
+  }
+
+  .dress-section{
+    padding-left:18px;
+    padding-right:18px;
+  }
+
+  .dress-description{
+    font-size:14px;
+  }
+
+  .color-palette{
+    gap:10px;
+  }
+
+  .color-circle{
+    width:34px;
+    height:34px;
+  }
+
+  .info-section{
+    padding-left:12px;
+    padding-right:12px;
+  }
+
+  .info-question{
+    padding:19px 18px;
+    font-size:17px;
+  }
+
+  .info-answer{
+    padding:0 18px 20px;
+    font-size:13.5px;
+  }
+
+  .link-section{
+    padding-left:15px;
+    padding-right:15px;
+  }
+
+  .boreal-button{
+    width:100%;
+    font-size:9px;
+    letter-spacing:1.5px;
+    padding:15px 15px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms!important;
+
+    animation-iteration-count:1!important;
+
+    transition-duration:.01ms!important;
+
+    scroll-behavior:auto!important;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     OPENING
+======================================================= -->
+
+<section id="opening">
+
+  <div class="opening-card">
+
+    <div class="opening-content">
+
+      <p class="opening-small">
+        Together with their families
+      </p>
+
+      <h1 class="opening-names">
+
+        Kylie
+
+        <span class="opening-amp">
+          &amp;
+        </span>
+
+        Jackson
+
+      </h1>
+
+      <p class="opening-date">
+        November 28, 2026
+      </p>
+
+      <button
+        type="button"
+        class="open-button"
+        id="openInvitation">
+
+        OPEN INVITATION
+
+      </button>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =======================================================
+     MAIN INVITATION
+======================================================= -->
+
+<main id="mainInvitation">
+
+<div class="invitation">
+
+
+  <!-- =====================================================
+       COVER / COUPLE
+  ====================================================== -->
+
+  <section class="hero reveal">
+
+    <img
+      class="hero-image"
+      src="Kylie_Jackson_Cover_Hero.png"
+      alt="Kylie & Jackson">
+
+
+    <!-- FALLING PETALS -->
+
+    <div
+      class="petals-container"
+      aria-hidden="true">
+
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+      <span class="petal"></span>
+
+    </div>
+
+
+    <div class="hero-overlay">
+
+      <div class="hero-names">
+
+        <span class="hero-names-script">
+          The Wedding of
+        </span>
+
+        <span class="hero-names-main">
+          Kylie &amp; Jackson
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       BOTANICAL DIVIDER
+  ====================================================== -->
+
+  <div class="page-divider reveal">
+
+    <div class="divider-decoration">
+
+      <img
+        src="signature_botanical_divider.PNG"
+        alt=""
+        aria-hidden="true">
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       ROMANTIC QUOTE
+  ====================================================== -->
+
+  <section class="quote-section reveal">
+
+    <p class="quote-small">
+      With love
+    </p>
+
+    <p class="quote">
+      “Whatever our souls are made of,
+      his and mine are the same.”
+    </p>
+
+    <p class="quote-author">
+      — Emily Brontë
+    </p>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       COUNTDOWN
+  ====================================================== -->
+
+  <section class="countdown-section reveal">
+
+    <p class="section-kicker">
+      Save the date
+    </p>
+
+    <h2 class="section-title">
+      We’re getting married
+    </h2>
+
+    <p class="countdown-date">
+      Saturday, November 28, 2026
+    </p>
+
+
+    <div class="countdown">
+
+      <div class="countdown-box">
+
+        <span
+          class="countdown-number"
+          id="days">
+          0
+        </span>
+
+        <span class="countdown-label">
+          Days
+        </span>
+
+      </div>
+
+
+      <div class="countdown-box">
+
+        <span
+          class="countdown-number"
+          id="hours">
+          0
+        </span>
+
+        <span class="countdown-label">
+          Hours
+        </span>
+
+      </div>
+
+
+      <div class="countdown-box">
+
+        <span
+          class="countdown-number"
+          id="minutes">
+          0
+        </span>
+
+        <span class="countdown-label">
+          Minutes
+        </span>
+
+      </div>
+
+
+      <div class="countdown-box">
+
+        <span
+          class="countdown-number"
+          id="seconds">
+          0
+        </span>
+
+        <span class="countdown-label">
+          Seconds
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       ORDER OF THE DAY
+  ====================================================== -->
+
+  <section class="order-section reveal">
+
+    <div class="order-intro">
+
+      <p class="section-kicker">
+        Order of the day
+      </p>
+
+      <h2 class="section-title">
+        A day to remember
+      </h2>
+
+    </div>
+
+
+    <div class="order-list">
+
+
+      <div class="order-item">
+
+        <div class="order-dot"></div>
+
+        <div>
+
+          <p class="order-time">
+            4:30 PM · Ceremony
+          </p>
+
+          <p class="order-description">
+            Join us as we say “I do” and begin
+            this beautiful new chapter together.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="order-item">
+
+        <div class="order-dot"></div>
+
+        <div>
+
+          <p class="order-time">
+            5:15 PM · Cocktails
+          </p>
+
+          <p class="order-description">
+            Raise a glass, enjoy a little something
+            to sip, and celebrate with us.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="order-item">
+
+        <div class="order-dot"></div>
+
+        <div>
+
+          <p class="order-time">
+            7:00 PM · Dinner
+          </p>
+
+          <p class="order-description">
+            Good food, great company, and a table
+            full of the people we love.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="order-item">
+
+        <div class="order-dot"></div>
+
+        <div>
+
+          <p class="order-time">
+            9:30 PM · Dancing
+          </p>
+
+          <p class="order-description">
+            Time to celebrate, dance, laugh,
+            and make memories together.
+          </p>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       BOTANICAL DIVIDER BEFORE GALLERY
+  ====================================================== -->
+
+  <div class="page-divider gallery-divider reveal">
+
+    <div class="divider-decoration">
+
+      <img
+        src="signature_botanical_divider.PNG"
+        alt=""
+        aria-hidden="true">
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       GALLERY
+  ====================================================== -->
+
+  <section class="gallery-section reveal">
+
+    <div class="gallery-intro">
+
+      <p class="section-kicker">
+        A few favorite moments
+      </p>
+
+      <h2 class="section-title">
+        Our Favorite Photos
+      </h2>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+
+        <img
+          src="Kylie_Jackson_Gallery_01.png"
+          alt="Kylie & Jackson">
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="Kylie_Jackson_Gallery_02.png"
+          alt="Kylie & Jackson">
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="Kylie_Jackson_Gallery_03.png"
+          alt="Kylie & Jackson">
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="Kylie_Jackson_Gallery_04.png"
+          alt="Kylie & Jackson">
+
+      </div>
+
+
+      <div class="gallery-item">
+
+        <img
+          src="Kylie_Jackson_Gallery_05.png"
+          alt="Kylie & Jackson">
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       BOTANICAL DIVIDER AFTER GALLERY
+  ====================================================== -->
+
+  <div class="page-divider reveal">
+
+    <div class="divider-decoration">
+
+      <img
+        src="signature_botanical_divider.PNG"
+        alt=""
+        aria-hidden="true">
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       CEREMONY
+  ====================================================== -->
+
+  <section class="event-section reveal">
+
+    <p class="section-kicker">
+      The ceremony
+    </p>
+
+    <h2 class="section-title">
+      Join us as we say “I do”
+    </h2>
+
+
+    <div class="event-card">
+
+      <div class="event-icon">
+        ♡
+      </div>
+
+      <h3 class="event-name">
+        Ceremony
+      </h3>
+
+      <p class="event-time">
+        Saturday, November 28, 2026
+      </p>
+
+      <p class="event-location">
+        The Garden Valley<br>
+        Nashville, Tennessee
+      </p>
+
+      <a
+        class="map-button"
+        href="https://maps.app.goo.gl/KEUUGJGszw54wpxC9?g_st=ic"
+        target="_blank"
+        rel="noopener">
+
+        VIEW MAP
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       CELEBRATION
+  ====================================================== -->
+
+  <section class="event-section reveal">
+
+    <p class="section-kicker">
+      The celebration
+    </p>
+
+    <h2 class="section-title">
+      Let’s celebrate!
+    </h2>
+
+
+    <div class="event-card">
+
+      <div class="event-icon">
+        ✦
+      </div>
+
+      <h3 class="event-name">
+        Celebration
+      </h3>
+
+      <p class="event-time">
+        Following the ceremony
+      </p>
+
+      <p class="event-location">
+        The Garden Valley<br>
+        Nashville, Tennessee
+      </p>
+
+      <a
+        class="map-button"
+        href="https://maps.app.goo.gl/KEUUGJGszw54wpxC9?g_st=ic"
+        target="_blank"
+        rel="noopener">
+
+        VIEW MAP
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       DRESS CODE
+  ====================================================== -->
+
+  <section class="dress-section reveal">
+
+    <p class="section-kicker">
+      Dress code
+    </p>
+
+    <h2 class="section-title">
+      Garden Formal
+    </h2>
+
+
+    <p class="dress-description">
+      Long dresses and light suits are welcome —
+      elegant, effortless, and perfect for an
+      evening surrounded by nature.
+    </p>
+
+
+    <p class="dress-note">
+      <strong>Kindly note:</strong>
+      White and ivory are reserved for the bride.
+      We invite you to choose from the suggested
+      tones below.
+    </p>
+
+
+    <p class="color-title">
+      Suggested colors
+    </p>
+
+
+    <div class="color-palette"
+         aria-label="Suggested wedding colors">
+
+      <span
+        class="color-circle color-sage"
+        aria-label="Sage green">
+      </span>
+
+      <span
+        class="color-circle color-ivory"
+        aria-label="Soft ivory">
+      </span>
+
+      <span
+        class="color-circle color-gold"
+        aria-label="Warm gold">
+      </span>
+
+      <span
+        class="color-circle color-taupe"
+        aria-label="Taupe">
+      </span>
+
+      <span
+        class="color-circle color-white"
+        aria-label="White reserved for the bride">
+      </span>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       REGISTRY / GIFTS
+  ====================================================== -->
+
+  <section class="link-section reveal">
+
+    <p class="section-kicker">
+      Gifts
+    </p>
+
+    <h2 class="section-title">
+      Registry
+    </h2>
+
+
+    <div class="link-card">
+
+      <a
+        class="link-block"
+        href="https://www.amazon.com/registries/gl/create?registryType=custom&ref_=ggr_emp_custom"
+        target="_blank"
+        rel="noopener">
+
+        <span class="link-block-title">
+          View Registry
+        </span>
+
+        <span class="link-block-subtitle">
+          Your love and presence are the greatest gifts
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       CALENDAR
+  ====================================================== -->
+
+  <section class="link-section reveal">
+
+    <p class="section-kicker">
+      Save the date
+    </p>
+
+    <h2 class="section-title">
+      Keep Our Day With You
+    </h2>
+
+
+    <div class="link-card">
+
+      <a
+        class="link-block"
+        href="https://calendar.google.com/calendar/u/0/r?hl=es"
+        target="_blank"
+        rel="noopener">
+
+        <span class="link-block-title">
+          Add to Calendar
+        </span>
+
+        <span class="link-block-subtitle">
+          Never miss a moment
+        </span>
+
+      </a>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       RSVP / CONTACT
+  ====================================================== -->
+
+  <section class="rsvp-section reveal">
+
+    <p class="section-kicker">
+      We hope you can join us
+    </p>
+
+    <h2 class="section-title">
+      RSVP
+    </h2>
+
+
+    <div class="rsvp-buttons">
+
+
+      <a
+        class="rsvp-button"
+        href="#"
+        onclick="return false;">
+
+        Online RSVP
+
+      </a>
+
+
+      <a
+        class="rsvp-button"
+        href="mailto:mrs.lacunza@gmail.com">
+
+        RSVP by Email
+
+      </a>
+
+
+      <a
+        class="rsvp-button"
+        href="sms:+19316192063">
+
+        Text to RSVP
+
+      </a>
+
+
+    </div>
+
+
+    <p class="rsvp-note">
+      Three RSVP options are available.
+      Choose the one that best suits your celebration.
+    </p>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       GOOD TO KNOW
+       ACCORDION
+  ====================================================== -->
+
+  <section class="info-section reveal">
+
+    <div class="info-intro">
+
+      <p class="section-kicker">
+        Good to know
+      </p>
+
+      <h2 class="section-title">
+        Details to Keep in Mind
+      </h2>
+
+    </div>
+
+
+    <div class="info-list">
+
+
+      <details class="info-item">
+
+        <summary class="info-question">
+          Can we bring the kids?
+        </summary>
+
+        <p class="info-answer">
+          We absolutely love your little ones,
+          but this celebration will be an
+          adults-only event. We hope you enjoy
+          the evening with us!
+        </p>
+
+      </details>
+
+
+      <details class="info-item">
+
+        <summary class="info-question">
+          Unplugged ceremony?
+        </summary>
+
+        <p class="info-answer">
+          We kindly ask that you put your
+          phones away during the ceremony
+          so everyone can be fully present
+          for this special moment.
+        </p>
+
+      </details>
+
+
+      <details class="info-item">
+
+        <summary class="info-question">
+          When should we arrive?
+        </summary>
+
+        <p class="info-answer">
+          Please plan to arrive a little early
+          so you have time to park, get settled,
+          and be ready when the celebration begins.
+        </p>
+
+      </details>
+
+
+      <details class="info-item">
+
+        <summary class="info-question">
+          What should I bring?
+        </summary>
+
+        <p class="info-answer">
+          Bring your dancing shoes, your best
+          wishes, and get ready to celebrate
+          with us!
+        </p>
+
+      </details>
+
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="footer reveal">
+
+    <p class="footer-script">
+      We can't wait to celebrate with you
+    </p>
+
+    <p class="footer-message">
+      Thank you for being part of our story.
+      We are so excited to celebrate this
+      beautiful day surrounded by the people
+      we love most.
+    </p>
+
+    <p class="footer-names">
+      Kylie &amp; Jackson
+    </p>
+
+
+    <!-- BOREAL DIGITAL DESIGN -->
+
+    <a
+      class="boreal-button"
+      href="https://borealdigitaldesign.github.io/"
+      target="_blank"
+      rel="noopener">
+
+      Designed with love by Boreal Digital Design
+
+    </a>
+
+  </footer>
+
+
+</div>
+
+</main>
+
+
+
+<!-- =======================================================
+     MUSIC
+======================================================= -->
+
+<audio
+  id="weddingMusic"
+  loop
+  preload="auto">
+
+  <source
+    src="musica.mp3"
+    type="audio/mpeg">
+
+</audio>
+
+
+<button
+  id="musicButton"
+  type="button"
+  aria-label="Play music">
+
+  🎵
+
+</button>
+
+
+
+<script>
+
+
+/* =========================================================
+   OPENING
+========================================================= */
+
+const opening =
+  document.getElementById("opening");
+
+const openInvitation =
+  document.getElementById("openInvitation");
+
+const mainInvitation =
+  document.getElementById("mainInvitation");
+
+
+openInvitation.addEventListener(
+  "click",
+  function(){
+
+    opening.classList.add("hide");
+
+    mainInvitation.style.display="block";
+
+    window.scrollTo({
+      top:0,
+      behavior:"auto"
+    });
+
+    setTimeout(function(){
+
+      checkVisibleSections();
+
+    },100);
+
+  }
+);
+
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+function checkVisibleSections(){
+
+  const sections =
+    document.querySelectorAll(
+      ".reveal:not(.visible)"
+    );
+
+
+  sections.forEach(function(section){
+
+    const rect =
+      section.getBoundingClientRect();
+
+
+    const trigger =
+      window.innerHeight * .90;
+
+
+    if(
+      rect.top < trigger &&
+      rect.bottom > 0
+    ){
+
+      section.classList.add("visible");
+
+    }
+
+  });
+
+}
+
+
+window.addEventListener(
+  "scroll",
+  checkVisibleSections,
+  {passive:true}
+);
+
+
+window.addEventListener(
+  "resize",
+  checkVisibleSections
+);
+
+
+setTimeout(
+  checkVisibleSections,
+  300
+);
+
+
+
+/* =========================================================
+   COUNTDOWN
+========================================================= */
+
+const weddingDate =
+  new Date(
+    "2026-11-28T00:00:00-06:00"
+  ).getTime();
+
+
+function updateCountdown(){
+
+  const now =
+    Date.now();
+
+
+  const difference =
+    weddingDate - now;
+
+
+  if(difference <= 0){
+
+    document.getElementById("days").textContent =
+      "0";
+
+    document.getElementById("hours").textContent =
+      "0";
+
+    document.getElementById("minutes").textContent =
+      "0";
+
+    document.getElementById("seconds").textContent =
+      "0";
+
+    return;
+
+  }
+
+
+  const days =
+    Math.floor(
+      difference /
+      (1000 * 60 * 60 * 24)
+    );
+
+
+  const hours =
+    Math.floor(
+      (
+        difference %
+        (1000 * 60 * 60 * 24)
+      ) /
+      (1000 * 60 * 60)
+    );
+
+
+  const minutes =
+    Math.floor(
+      (
+        difference %
+        (1000 * 60 * 60)
+      ) /
+      (1000 * 60)
+    );
+
+
+  const seconds =
+    Math.floor(
+      (
+        difference %
+        (1000 * 60)
+      ) /
+      1000
+    );
+
+
+  document.getElementById("days").textContent =
+    days;
+
+  document.getElementById("hours").textContent =
+    hours;
+
+  document.getElementById("minutes").textContent =
+    minutes;
+
+  document.getElementById("seconds").textContent =
+    seconds;
+
+}
+
+
+updateCountdown();
+
+
+setInterval(
+  updateCountdown,
+  1000
+);
+
+
+
+/* =========================================================
+   MUSIC
+========================================================= */
+
+const music =
+  document.getElementById("weddingMusic");
+
+const musicButton =
+  document.getElementById("musicButton");
+
+let musicPlaying =
+  false;
+
+
+function updateMusicButton(){
+
+  if(musicPlaying){
+
+    musicButton.textContent =
+      "⏸";
+
+    musicButton.setAttribute(
+      "aria-label",
+      "Pause music"
+    );
+
+  }else{
+
+    musicButton.textContent =
+      "🎵";
+
+    musicButton.setAttribute(
+      "aria-label",
+      "Play music"
+    );
+
+  }
+
+}
+
+
+function startMusic(){
+
+  music.play()
+
+  .then(function(){
+
+    musicPlaying =
+      true;
+
+    updateMusicButton();
+
+  })
+
+  .catch(function(){
+
+    musicPlaying =
+      false;
+
+    updateMusicButton();
+
+  });
+
+}
+
+
+musicButton.addEventListener(
+  "click",
+  function(){
+
+    if(music.paused){
+
+      startMusic();
+
+    }else{
+
+      music.pause();
+
+      musicPlaying =
+        false;
+
+      updateMusicButton();
+
+    }
+
+  }
+);
+
+
+updateMusicButton();
+
+
+
+/* =========================================================
+   INITIAL STATE
+========================================================= */
+
+window.addEventListener(
+  "load",
+  function(){
+
+    checkVisibleSections();
+
+  }
+);
+
+
+</script>
+
+</body>
+</html>
