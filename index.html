@@ -52,11 +52,15 @@ img{
   position:fixed;
   inset:0;
   z-index:10000;
+
   background:#f3eee5;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   padding:22px;
+
   transition:
     opacity 1s ease,
     visibility 1s ease;
@@ -73,21 +77,15 @@ img{
   text-align:center;
 }
 
-.opening-image{
-  width:100%;
-  display:block;
-  border-radius:2px;
-  box-shadow:
-    0 18px 50px rgba(62,52,39,.13);
-}
-
 .opening-content{
-  padding:27px 20px 10px;
+  padding:20px 20px 10px;
 }
 
 .opening-small{
-  margin:0 0 13px;
+  margin:0 0 15px;
+
   color:#9a8765;
+
   font-size:10px;
   letter-spacing:4px;
   text-transform:uppercase;
@@ -95,13 +93,16 @@ img{
 
 .opening-names{
   margin:0;
+
   color:#403d34;
+
   font-family:
     "Baskerville",
     "Times New Roman",
     Georgia,
     serif;
-  font-size:clamp(35px,9vw,58px);
+
+  font-size:clamp(42px,10vw,62px);
   font-weight:normal;
   line-height:1.05;
 }
@@ -111,13 +112,16 @@ img{
     "Snell Roundhand",
     "Brush Script MT",
     cursive;
+
   font-size:.72em;
   color:#a58b64;
 }
 
 .opening-date{
-  margin:14px 0 24px;
+  margin:16px 0 28px;
+
   color:#766f61;
+
   font-size:11px;
   letter-spacing:2.5px;
   text-transform:uppercase;
@@ -125,17 +129,28 @@ img{
 
 .open-button{
   display:inline-block;
+
   min-width:180px;
+
   padding:12px 22px;
+
   border:1px solid #a99673;
   border-radius:30px;
+
   background:rgba(255,255,255,.82);
+
   color:#635843;
+
   text-decoration:none;
+
   font-size:10px;
   letter-spacing:2px;
+
   cursor:pointer;
-  box-shadow:0 5px 18px rgba(70,55,35,.08);
+
+  box-shadow:
+    0 5px 18px rgba(70,55,35,.08);
+
   transition:
     transform .25s ease,
     background .25s ease;
@@ -168,20 +183,27 @@ img{
 
 .hero{
   position:relative;
+
   width:100%;
   min-height:100svh;
+
   display:flex;
   align-items:center;
   justify-content:center;
+
   background:#f5f0e7;
+
   overflow:hidden;
 }
 
 .hero-image{
   width:100%;
   height:auto;
+
   min-height:100svh;
+
   object-fit:cover;
+
   display:block;
 }
 
@@ -192,8 +214,10 @@ img{
 
 .hero::after{
   content:"";
+
   position:absolute;
   inset:0;
+
   pointer-events:none;
 
   background:
@@ -213,14 +237,19 @@ img{
 .petals-container{
   position:absolute;
   inset:0;
+
   z-index:4;
+
   overflow:hidden;
+
   pointer-events:none;
 }
 
 .petal{
   position:absolute;
+
   top:-50px;
+
   width:10px;
   height:15px;
 
@@ -362,6 +391,7 @@ img{
 .hero-overlay{
   position:absolute;
   inset:0;
+
   z-index:5;
 
   display:flex;
@@ -383,6 +413,7 @@ img{
 
 .hero-names{
   color:white;
+
   text-align:center;
 
   text-shadow:
@@ -392,6 +423,7 @@ img{
 
 .hero-names-script{
   display:block;
+
   margin-bottom:4px;
 
   font-family:
@@ -401,6 +433,7 @@ img{
     cursive;
 
   font-size:clamp(27px,8vw,48px);
+
   line-height:1;
 }
 
@@ -412,122 +445,54 @@ img{
     serif;
 
   font-size:clamp(30px,8vw,52px);
+
   font-weight:normal;
+
   letter-spacing:1px;
 }
 
 
 /* =========================================================
-   DECORATIVE PAGE DIVIDER
+   SIGNATURE BOTANICAL DIVIDER
 ========================================================= */
 
 .page-divider{
   position:relative;
-  padding:34px 25px 31px;
+
+  padding:25px 20px;
+
   background:#f7f4ee;
+
   text-align:center;
+
   overflow:hidden;
-}
-
-.page-divider::before{
-  content:"";
-  position:absolute;
-  left:0;
-  right:0;
-  top:50%;
-
-  height:1px;
-
-  background:
-    linear-gradient(
-      to right,
-      transparent 4%,
-      #d4bd91 20%,
-      #d4bd91 80%,
-      transparent 96%
-    );
-
-  opacity:.75;
 }
 
 .divider-decoration{
   position:relative;
+
   z-index:2;
 
-  display:inline-flex;
+  display:flex;
+
   align-items:center;
   justify-content:center;
 
-  min-width:230px;
+  width:100%;
 
-  padding:0 18px;
-
-  background:#f7f4ee;
-
-  color:#a08b69;
-
-  font-size:21px;
-  letter-spacing:4px;
+  background:transparent;
 }
 
-.divider-decoration::before{
-  content:"";
-  width:38px;
-  height:1px;
-  margin-right:13px;
+.divider-decoration img{
+  display:block;
 
-  background:#d4bd91;
-}
+  width:min(100%,360px);
 
-.divider-decoration::after{
-  content:"";
-  width:38px;
-  height:1px;
-  margin-left:13px;
+  height:auto;
 
-  background:#d4bd91;
-}
+  margin:0 auto;
 
-
-/* Small botanical decoration */
-
-.divider-leaves{
-  display:inline-block;
-  position:relative;
-  width:100px;
-  height:24px;
-}
-
-.divider-leaves::before,
-.divider-leaves::after{
-  content:"";
-  position:absolute;
-  top:10px;
-
-  width:40px;
-  height:8px;
-
-  border-top:1px solid #c8b486;
-}
-
-.divider-leaves::before{
-  left:0;
-  transform:rotate(18deg);
-}
-
-.divider-leaves::after{
-  right:0;
-  transform:rotate(-18deg);
-}
-
-.divider-star{
-  position:absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-
-  color:#b89b63;
-  font-size:19px;
+  object-fit:contain;
 }
 
 
@@ -536,17 +501,10 @@ img{
 ========================================================= */
 
 .gallery-divider{
-  padding-top:43px;
-  padding-bottom:43px;
+  padding-top:34px;
+  padding-bottom:34px;
+
   background:#f7f4ee;
-}
-
-.gallery-divider .divider-decoration{
-  min-width:280px;
-}
-
-.gallery-divider .divider-star{
-  font-size:22px;
 }
 
 
@@ -556,6 +514,7 @@ img{
 
 .reveal{
   opacity:0;
+
   transform:translateY(35px);
 
   transition:
@@ -565,6 +524,7 @@ img{
 
 .reveal.visible{
   opacity:1;
+
   transform:translateY(0);
 }
 
@@ -575,21 +535,29 @@ img{
 
 .quote-section{
   padding:82px 30px 78px;
+
   text-align:center;
+
   background:#f7f4ee;
 }
 
 .quote-small{
   margin:0 0 22px;
+
   color:#a08b69;
+
   font-size:10px;
+
   letter-spacing:4px;
+
   text-transform:uppercase;
 }
 
 .quote{
   max-width:560px;
+
   margin:0 auto;
+
   color:#514b3f;
 
   font-family:
@@ -599,15 +567,21 @@ img{
     cursive;
 
   font-size:clamp(29px,7vw,43px);
+
   line-height:1.25;
+
   font-weight:normal;
 }
 
 .quote-author{
   margin:22px 0 0;
+
   color:#817866;
+
   font-size:10px;
+
   letter-spacing:2.5px;
+
   text-transform:uppercase;
 }
 
@@ -618,20 +592,27 @@ img{
 
 .countdown-section{
   padding:68px 20px 75px;
+
   text-align:center;
+
   background:#eeeadf;
 }
 
 .section-kicker{
   margin:0 0 16px;
+
   color:#9b8865;
+
   font-size:10px;
+
   letter-spacing:4px;
+
   text-transform:uppercase;
 }
 
 .section-title{
   margin:0;
+
   color:#403d34;
 
   font-family:
@@ -641,49 +622,73 @@ img{
     serif;
 
   font-size:clamp(31px,7vw,46px);
+
   font-weight:normal;
+
   line-height:1.15;
 }
 
 .countdown-date{
   margin:14px 0 31px;
+
   color:#766f61;
+
   font-size:12px;
+
   letter-spacing:2px;
+
   text-transform:uppercase;
 }
 
 .countdown{
   display:flex;
+
   justify-content:center;
+
   gap:8px;
+
   max-width:500px;
+
   margin:0 auto;
 }
 
 .countdown-box{
   flex:1;
+
   max-width:100px;
+
   padding:13px 5px 12px;
+
   background:rgba(255,255,255,.63);
+
   border:1px solid #d0c4ad;
+
   border-radius:10px;
 }
 
 .countdown-number{
   display:block;
+
   color:#5b5547;
+
   font-size:25px;
+
   line-height:1;
+
   font-weight:normal;
 }
 
 .countdown-label{
   display:block;
+
   margin-top:7px;
+
   color:#8a806e;
+
   font-size:7px;
+
   letter-spacing:1.3px;
+
   text-transform:uppercase;
 }
 
@@ -694,50 +699,69 @@ img{
 
 .order-section{
   padding:78px 25px 82px;
+
   background:#f7f4ee;
+
   text-align:center;
 }
 
 .order-intro{
   max-width:550px;
+
   margin:0 auto 38px;
 }
 
 .order-list{
   max-width:600px;
+
   margin:0 auto;
+
   text-align:left;
 }
 
 .order-item{
   display:grid;
+
   grid-template-columns:42px 1fr;
+
   column-gap:16px;
+
   position:relative;
+
   padding:0 0 28px;
+
   margin-bottom:25px;
+
   border-bottom:1px solid #ddd6c9;
 }
 
 .order-item:last-child{
   margin-bottom:0;
+
   padding-bottom:0;
+
   border-bottom:none;
 }
 
 .order-dot{
   width:24px;
   height:24px;
+
   margin:3px auto 0;
+
   border-radius:50%;
+
   background:#a1a58a;
+
   border:6px solid #ece9de;
+
   box-shadow:
     0 0 0 1px #d8d0bf;
 }
 
 .order-time{
   margin:0 0 7px;
+
   color:#403d34;
 
   font-family:
@@ -747,13 +771,17 @@ img{
     serif;
 
   font-size:21px;
+
   font-weight:bold;
 }
 
 .order-description{
   margin:0;
+
   color:#7b7465;
+
   font-size:14px;
+
   line-height:1.65;
 }
 
@@ -764,24 +792,31 @@ img{
 
 .gallery-section{
   padding:75px 18px 80px;
+
   background:#f7f4ee;
+
   text-align:center;
 }
 
 .gallery-intro{
   max-width:520px;
+
   margin:0 auto 32px;
 }
 
 .gallery-grid{
   display:grid;
+
   grid-template-columns:repeat(2,1fr);
+
   gap:10px;
 }
 
 .gallery-item{
   overflow:hidden;
+
   border-radius:2px;
+
   background:#e8e1d5;
 }
 
@@ -792,7 +827,9 @@ img{
 .gallery-item img{
   width:100%;
   height:100%;
+
   display:block;
+
   object-fit:cover;
 
   transition:
@@ -810,7 +847,9 @@ img{
 
 .event-section{
   padding:75px 20px 82px;
+
   background:#eeeadf;
+
   text-align:center;
 }
 
@@ -820,33 +859,41 @@ img{
 
 .event-card{
   max-width:590px;
+
   margin:32px auto 0;
+
   padding:35px 24px 38px;
 
   background:rgba(255,255,255,.55);
 
   border:1px solid #d7ccb9;
+
   border-radius:24px;
 }
 
 .event-icon{
   width:55px;
   height:55px;
+
   margin:0 auto 19px;
 
   display:flex;
+
   align-items:center;
   justify-content:center;
 
   border:1px solid #cdbd9f;
+
   border-radius:50%;
 
   color:#a08a63;
+
   font-size:22px;
 }
 
 .event-name{
   margin:0 0 9px;
+
   color:#403d34;
 
   font-family:
@@ -856,37 +903,51 @@ img{
     serif;
 
   font-size:31px;
+
   font-weight:normal;
 }
 
 .event-time{
   margin:0 0 16px;
+
   color:#a08b69;
+
   font-size:10px;
+
   letter-spacing:2.2px;
+
   text-transform:uppercase;
 }
 
 .event-location{
   margin:0 auto 23px;
+
   max-width:430px;
+
   color:#756d5e;
+
   font-size:14px;
+
   line-height:1.7;
 }
 
 .map-button{
   display:inline-block;
+
   padding:11px 22px;
 
   border:1px solid #a99673;
+
   border-radius:25px;
 
   background:#fff;
+
   color:#675b46;
 
   text-decoration:none;
+
   font-size:9px;
+
   letter-spacing:1.8px;
 
   transition:
@@ -904,23 +965,33 @@ img{
 
 .dress-section{
   padding:82px 22px 85px;
+
   background:#eeeadf;
+
   text-align:center;
 }
 
 .dress-description{
   max-width:540px;
+
   margin:24px auto 0;
+
   color:#756d5e;
+
   font-size:15px;
+
   line-height:1.75;
 }
 
 .dress-note{
   max-width:500px;
+
   margin:22px auto 0;
+
   color:#514b3f;
+
   font-size:12px;
+
   line-height:1.7;
 }
 
@@ -930,23 +1001,31 @@ img{
 
 .color-title{
   margin:34px 0 17px;
+
   color:#9b8865;
+
   font-size:9px;
+
   letter-spacing:3px;
+
   text-transform:uppercase;
 }
 
 .color-palette{
   display:flex;
+
   justify-content:center;
   align-items:center;
+
   gap:15px;
+
   margin:0 auto;
 }
 
 .color-circle{
   width:38px;
   height:38px;
+
   border-radius:50%;
 
   border:1px solid rgba(80,70,50,.18);
@@ -982,26 +1061,33 @@ img{
 
 .link-section{
   padding:76px 22px 82px;
+
   text-align:center;
+
   background:#f7f4ee;
 }
 
 .link-card{
   max-width:560px;
+
   margin:31px auto 0;
 }
 
 .link-block{
   display:block;
+
   padding:20px 20px;
+
   margin-bottom:12px;
 
   background:rgba(255,255,255,.72);
 
   border:1px solid #d5c8b1;
+
   border-radius:18px;
 
   color:#403d34;
+
   text-decoration:none;
 
   transition:
@@ -1011,11 +1097,13 @@ img{
 
 .link-block:hover{
   transform:translateY(-2px);
+
   background:#fff;
 }
 
 .link-block-title{
   display:block;
+
   margin-bottom:5px;
 
   font-family:
@@ -1029,9 +1117,13 @@ img{
 
 .link-block-subtitle{
   display:block;
+
   color:#827865;
+
   font-size:10px;
+
   letter-spacing:1.5px;
+
   text-transform:uppercase;
 }
 
@@ -1042,30 +1134,41 @@ img{
 
 .rsvp-section{
   padding:78px 18px 80px;
+
   background:#f7f4ee;
+
   text-align:center;
 }
 
 .rsvp-buttons{
   max-width:500px;
+
   margin:31px auto 0;
 }
 
 .rsvp-button{
   display:block;
+
   width:100%;
+
   margin-bottom:12px;
+
   padding:15px 18px;
 
   border:1px solid #a99673;
+
   border-radius:30px;
 
   background:#fffdf9;
+
   color:#655943;
 
   text-decoration:none;
+
   font-size:10px;
+
   letter-spacing:2px;
+
   text-transform:uppercase;
 
   transition:
@@ -1075,6 +1178,7 @@ img{
 
 .rsvp-button:hover{
   transform:translateY(-2px);
+
   background:#fff;
 }
 
@@ -1085,10 +1189,15 @@ img{
 
 .rsvp-note{
   max-width:470px;
+
   margin:26px auto 0;
+
   color:#817866;
+
   font-size:12px;
+
   line-height:1.7;
+
   font-style:italic;
 }
 
@@ -1099,18 +1208,23 @@ img{
 
 .info-section{
   padding:82px 18px 88px;
+
   background:#f7f4ee;
+
   text-align:center;
 }
 
 .info-intro{
   max-width:540px;
+
   margin:0 auto 34px;
 }
 
 .info-list{
   max-width:600px;
+
   margin:0 auto;
+
   text-align:left;
 }
 
@@ -1120,6 +1234,7 @@ img{
   background:#fffdf9;
 
   border:1px solid #ded5c5;
+
   border-radius:17px;
 
   overflow:hidden;
@@ -1136,7 +1251,9 @@ img{
   position:relative;
 
   display:flex;
+
   align-items:center;
+
   justify-content:space-between;
 
   gap:15px;
@@ -1144,6 +1261,7 @@ img{
   padding:21px 21px;
 
   cursor:pointer;
+
   list-style:none;
 
   color:#403d34;
@@ -1155,7 +1273,9 @@ img{
     serif;
 
   font-size:18px;
+
   font-weight:bold;
+
   line-height:1.35;
 }
 
@@ -1165,12 +1285,15 @@ img{
 
 .info-question::after{
   content:"+";
+
   flex-shrink:0;
 
   color:#a08b69;
 
   font-size:23px;
+
   font-weight:normal;
+
   line-height:1;
 
   transition:
@@ -1183,11 +1306,13 @@ img{
 
 .info-answer{
   margin:0;
+
   padding:0 21px 22px;
 
   color:#797160;
 
   font-size:14px;
+
   line-height:1.7;
 }
 
@@ -1202,12 +1327,15 @@ img{
 
 .footer{
   padding:85px 25px 105px;
+
   background:#f3eee5;
+
   text-align:center;
 }
 
 .footer-script{
   margin:0;
+
   color:#9a8462;
 
   font-family:
@@ -1217,21 +1345,25 @@ img{
     cursive;
 
   font-size:44px;
+
   font-weight:normal;
 }
 
 .footer-message{
   max-width:450px;
+
   margin:17px auto 0;
 
   color:#746c5d;
 
   font-size:13px;
+
   line-height:1.7;
 }
 
 .footer-names{
   margin:26px 0 0;
+
   color:#403d34;
 
   font-family:
@@ -1241,7 +1373,9 @@ img{
     serif;
 
   font-size:12px;
+
   letter-spacing:3px;
+
   text-transform:uppercase;
 }
 
@@ -1252,26 +1386,32 @@ img{
 
 #musicButton{
   position:fixed;
+
   right:18px;
   bottom:20px;
+
   z-index:9000;
 
   width:52px;
   height:52px;
 
   border:1px solid rgba(153,132,93,.45);
+
   border-radius:50%;
 
   background:rgba(255,253,249,.92);
+
   color:#806c4b;
 
   font-size:19px;
+
   cursor:pointer;
 
   box-shadow:
     0 5px 18px rgba(60,48,32,.14);
 
   backdrop-filter:blur(5px);
+
   -webkit-backdrop-filter:blur(5px);
 }
 
@@ -1283,7 +1423,7 @@ img{
 @media(max-width:600px){
 
   .opening-content{
-    padding-top:22px;
+    padding-top:18px;
   }
 
   .opening-names{
@@ -1308,21 +1448,16 @@ img{
   }
 
   .page-divider{
-    padding:30px 15px;
+    padding:21px 12px;
   }
 
-  .divider-decoration{
-    min-width:210px;
-    font-size:18px;
+  .divider-decoration img{
+    width:min(100%,300px);
   }
 
   .gallery-divider{
-    padding-top:36px;
-    padding-bottom:36px;
-  }
-
-  .gallery-divider .divider-decoration{
-    min-width:245px;
+    padding-top:30px;
+    padding-bottom:30px;
   }
 
   .quote-section{
@@ -1351,8 +1486,11 @@ img{
 
   .order-item{
     grid-template-columns:35px 1fr;
+
     column-gap:12px;
+
     padding-bottom:24px;
+
     margin-bottom:23px;
   }
 
@@ -1442,8 +1580,11 @@ img{
   *::before,
   *::after{
     animation-duration:.01ms!important;
+
     animation-iteration-count:1!important;
+
     transition-duration:.01ms!important;
+
     scroll-behavior:auto!important;
   }
 
@@ -1464,11 +1605,6 @@ img{
 
   <div class="opening-card">
 
-    <img
-      class="opening-image"
-      src="Kylie_Jackson_Cover_Hero.png"
-      alt="Kylie & Jackson Wedding">
-
     <div class="opening-content">
 
       <p class="opening-small">
@@ -1476,9 +1612,15 @@ img{
       </p>
 
       <h1 class="opening-names">
+
         Kylie
-        <span class="opening-amp">&amp;</span>
+
+        <span class="opening-amp">
+          &amp;
+        </span>
+
         Jackson
+
       </h1>
 
       <p class="opening-date">
@@ -1564,16 +1706,17 @@ img{
 
 
   <!-- =====================================================
-       DECORATIVE DIVIDER
+       BOTANICAL DIVIDER
   ====================================================== -->
 
   <div class="page-divider reveal">
 
     <div class="divider-decoration">
 
-      <div class="divider-leaves">
-        <span class="divider-star">✦</span>
-      </div>
+      <img
+        src="signature_botanical_divider.PNG"
+        alt=""
+        aria-hidden="true">
 
     </div>
 
@@ -1799,16 +1942,17 @@ img{
 
 
   <!-- =====================================================
-       DECORATION BEFORE GALLERY
+       BOTANICAL DIVIDER BEFORE GALLERY
   ====================================================== -->
 
   <div class="page-divider gallery-divider reveal">
 
     <div class="divider-decoration">
 
-      <div class="divider-leaves">
-        <span class="divider-star">✦</span>
-      </div>
+      <img
+        src="signature_botanical_divider.PNG"
+        alt=""
+        aria-hidden="true">
 
     </div>
 
@@ -1888,16 +2032,17 @@ img{
 
 
   <!-- =====================================================
-       DECORATION AFTER GALLERY
+       BOTANICAL DIVIDER AFTER GALLERY
   ====================================================== -->
 
   <div class="page-divider reveal">
 
     <div class="divider-decoration">
 
-      <div class="divider-leaves">
-        <span class="divider-star">✦</span>
-      </div>
+      <img
+        src="signature_botanical_divider.PNG"
+        alt=""
+        aria-hidden="true">
 
     </div>
 
