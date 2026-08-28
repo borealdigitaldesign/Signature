@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Jessica & Michael | Wedding Invitation</title>
+
 <style>
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -42,8 +43,19 @@ img{max-width:100%}
 .opening-petal:nth-child(6){left:79%;animation-duration:11s,4.2s;animation-delay:5s,1.2s;transform:scale(.7) rotate(65deg)}
 .opening-petal:nth-child(7){left:91%;animation-duration:10s,3.6s;animation-delay:1.5s,.8s;transform:scale(.75) rotate(20deg)}
 .opening-petal:nth-child(8){left:43%;animation-duration:13s,4.4s;animation-delay:6s,1.7s;transform:scale(.55) rotate(80deg)}
-@keyframes openingPetalFall{0%{top:-30px;opacity:0}12%{opacity:.45}82%{opacity:.35}100%{top:110%;opacity:0}}
-@keyframes openingPetalSway{0%{margin-left:-12px}50%{margin-left:22px}100%{margin-left:-12px}}
+
+@keyframes openingPetalFall{
+0%{top:-30px;opacity:0}
+12%{opacity:.45}
+82%{opacity:.35}
+100%{top:110%;opacity:0}
+}
+
+@keyframes openingPetalSway{
+0%{margin-left:-12px}
+50%{margin-left:22px}
+100%{margin-left:-12px}
+}
 
 /* MAIN */
 #mainInvitation{display:none}
@@ -65,8 +77,20 @@ img{max-width:100%}
 .petal:nth-child(8){left:88%;animation-duration:12.5s,4.4s;animation-delay:4.5s,1.7s;transform:scale(.65) rotate(25deg)}
 .petal:nth-child(9){left:21%;animation-duration:14s,4s;animation-delay:7s,.6s;transform:scale(.55) rotate(80deg)}
 .petal:nth-child(10){left:71%;animation-duration:13.5s,4.7s;animation-delay:6s,1s;transform:scale(.6) rotate(15deg)}
-@keyframes petalFall{0%{top:-50px;opacity:0}10%{opacity:.78}85%{opacity:.72}100%{top:110%;opacity:0}}
-@keyframes petalSway{0%{margin-left:-10px}50%{margin-left:25px}100%{margin-left:-10px}}
+
+@keyframes petalFall{
+0%{top:-50px;opacity:0}
+10%{opacity:.78}
+85%{opacity:.72}
+100%{top:110%;opacity:0}
+}
+
+@keyframes petalSway{
+0%{margin-left:-10px}
+50%{margin-left:25px}
+100%{margin-left:-10px}
+}
+
 .hero-overlay{position:absolute;inset:0;z-index:5;display:flex;align-items:flex-end;justify-content:center;padding:0 25px 55px;background:linear-gradient(to bottom,rgba(0,0,0,0) 48%,rgba(65,45,48,.10) 72%,rgba(65,45,48,.30) 100%);pointer-events:none}
 .hero-names{color:white;text-align:center;text-shadow:0 2px 14px rgba(0,0,0,.25),0 1px 3px rgba(0,0,0,.20)}
 .hero-names-script{display:block;margin-bottom:4px;font-family:"Snell Roundhand","Brush Script MT","Segoe Script",cursive;font-size:clamp(27px,8vw,48px);line-height:1}
@@ -191,28 +215,33 @@ img{max-width:100%}
 
 /* MOBILE */
 @media(max-width:600px){
-.opening-card{transform:translateY(45px)}
-.opening-content{padding-top:12px}
-.opening-small{font-size:13px;letter-spacing:3px;margin-bottom:3px}
-.opening-heart{width:min(100%,430px)}
-.opening-heart-content{inset:22% 11% 13%}
+#opening{align-items:flex-start;justify-content:center;padding:0 18px}
+.opening-card{width:100%;max-width:430px;margin-top:clamp(145px,22vh,210px);transform:none}
+.opening-small{font-size:13px;letter-spacing:3px;margin:0 0 8px}
+.opening-heart{width:100%;max-width:430px}
+.opening-heart-content{inset:0;padding:7% 11% 4%}
 .opening-names{font-size:clamp(43px,13vw,62px)}
 .opening-date{margin-top:19px;font-size:11px;letter-spacing:2.5px}
-.open-button{margin-top:3px}
+.open-button{margin-top:17px;min-width:195px;padding:14px 24px}
 .opening-petal{width:8px;height:12px}
+
 .hero{min-height:auto}
 .hero-image{min-height:auto}
 .hero-overlay{padding-bottom:30px}
 .petal{width:8px;height:12px}
+
 .page-divider{padding:7px 10px 1px}
 .divider-decoration img{width:min(100%,300px);padding:0}
 .gallery-divider{padding-top:25px;padding-bottom:25px}
+
 .quote-section{padding:2px 25px 65px}
 .quote-small{margin-bottom:13px}
+
 .countdown-section{padding:60px 12px 65px}
 .countdown{gap:5px}
 .countdown-box{padding:11px 3px}
 .countdown-number{font-size:22px}
+
 .order-section{padding:65px 18px 72px}
 .order-intro{margin-bottom:42px}
 .order-list{padding:4px 0}
@@ -223,28 +252,34 @@ img{max-width:100%}
 .order-name{font-size:9px;letter-spacing:1.2px}
 .order-connector::before{width:20px}
 .order-dot{width:7px;height:7px}
+
 .gallery-section{padding-left:12px;padding-right:12px}
 .gallery-grid{gap:7px}
+
 .event-section{padding-left:14px;padding-right:14px}
 .event-card{padding:30px 18px 32px}
 .event-name{font-size:28px}
+
 .dress-section{padding-left:18px;padding-right:18px}
 .dress-description{font-size:14px}
 .color-palette{gap:10px}
 .color-circle{width:34px;height:34px}
+
 .info-section{padding-left:12px;padding-right:12px}
 .info-question{padding:19px 18px;font-size:17px}
 .info-answer{padding:0 18px 20px;font-size:13.5px}
+
 .link-section{padding-left:15px;padding-right:15px}
 .boreal-button{width:100%;font-size:9px;letter-spacing:1.5px;padding:15px}
 }
-    
+
 /* REDUCED MOTION */
 @media(prefers-reduced-motion:reduce){
 *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
+
 <body>
 
 <!-- OPENING -->
@@ -291,6 +326,7 @@ img{max-width:100%}
 <!-- HERO -->
 <section class="hero reveal">
 <img class="hero-image" src="jessica-michael-gallery/Jessica-Michael_Cover_Hero.png" alt="Jessica & Michael">
+
 <div class="petals-container" aria-hidden="true">
 <span class="petal"></span>
 <span class="petal"></span>
@@ -303,6 +339,7 @@ img{max-width:100%}
 <span class="petal"></span>
 <span class="petal"></span>
 </div>
+
 <div class="hero-overlay">
 <div class="hero-names">
 <span class="hero-names-script">The Wedding of</span>
@@ -330,19 +367,23 @@ img{max-width:100%}
 <p class="section-kicker">Save the date</p>
 <h2 class="section-title">We’re getting married</h2>
 <p class="countdown-date">Saturday, March 20, 2027</p>
+
 <div class="countdown">
 <div class="countdown-box">
 <span class="countdown-number" id="days">0</span>
 <span class="countdown-label">Days</span>
 </div>
+
 <div class="countdown-box">
 <span class="countdown-number" id="hours">0</span>
 <span class="countdown-label">Hours</span>
 </div>
+
 <div class="countdown-box">
 <span class="countdown-number" id="minutes">0</span>
 <span class="countdown-label">Minutes</span>
 </div>
+
 <div class="countdown-box">
 <span class="countdown-number" id="seconds">0</span>
 <span class="countdown-label">Seconds</span>
@@ -356,42 +397,54 @@ img{max-width:100%}
 <p class="section-kicker">Order of the day</p>
 <h2 class="section-title">A day to remember</h2>
 </div>
+
 <div class="order-list">
 <div class="order-item">
 <div class="order-side order-left">
 <p class="order-time">4:30 PM</p>
 <p class="order-name">Ceremony</p>
 </div>
+
 <div class="order-connector">
 <span class="order-dot"></span>
 </div>
+
 <div class="order-side order-right"></div>
 </div>
+
 <div class="order-item">
 <div class="order-side order-left"></div>
+
 <div class="order-connector">
 <span class="order-dot"></span>
 </div>
+
 <div class="order-side order-right">
 <p class="order-time">5:15 PM</p>
 <p class="order-name">Cocktails</p>
 </div>
 </div>
+
 <div class="order-item">
 <div class="order-side order-left">
 <p class="order-time">7:00 PM</p>
 <p class="order-name">Dinner</p>
 </div>
+
 <div class="order-connector">
 <span class="order-dot"></span>
 </div>
+
 <div class="order-side order-right"></div>
 </div>
+
 <div class="order-item">
 <div class="order-side order-left"></div>
+
 <div class="order-connector">
 <span class="order-dot"></span>
 </div>
+
 <div class="order-side order-right">
 <p class="order-time">9:30 PM</p>
 <p class="order-name">Dancing</p>
@@ -413,19 +466,24 @@ img{max-width:100%}
 <p class="section-kicker">A few favorite moments</p>
 <h2 class="section-title">Our Favorite Photos</h2>
 </div>
+
 <div class="gallery-grid">
 <div class="gallery-item">
 <img src="jessica-michael-gallery/Jessica-Michael_Gallery_01.png" alt="Jessica & Michael">
 </div>
+
 <div class="gallery-item">
 <img src="jessica-michael-gallery/Jessica-Michael_Gallery_02.png" alt="Jessica & Michael">
 </div>
+
 <div class="gallery-item">
 <img src="jessica-michael-gallery/Jessica-Michael_Gallery_03.png" alt="Jessica & Michael">
 </div>
+
 <div class="gallery-item">
 <img src="jessica-michael-gallery/Jessica-Michael_Gallery_04.png" alt="Jessica & Michael">
 </div>
+
 <div class="gallery-item">
 <img src="jessica-michael-gallery/Jessica-Michael_Gallery_05.png" alt="Jessica & Michael">
 </div>
@@ -443,6 +501,7 @@ img{max-width:100%}
 <section class="event-section reveal">
 <p class="section-kicker">The ceremony</p>
 <h2 class="section-title">Join us as we say “I do”</h2>
+
 <div class="event-card">
 <div class="event-icon">♡</div>
 <h3 class="event-name">Ceremony</h3>
@@ -456,6 +515,7 @@ img{max-width:100%}
 <section class="event-section reveal">
 <p class="section-kicker">The celebration</p>
 <h2 class="section-title">Let’s celebrate!</h2>
+
 <div class="event-card">
 <div class="event-icon">✦</div>
 <h3 class="event-name">Celebration</h3>
@@ -469,9 +529,17 @@ img{max-width:100%}
 <section class="dress-section reveal">
 <p class="section-kicker">Dress code</p>
 <h2 class="section-title">Garden Formal</h2>
-<p class="dress-description">Long dresses and light suits are welcome — elegant, effortless, and perfect for an evening surrounded by nature.</p>
-<p class="dress-note"><strong>Kindly note:</strong> White and ivory are reserved for the bride. We invite you to choose from the suggested tones below.</p>
+
+<p class="dress-description">
+Long dresses and light suits are welcome — elegant, effortless, and perfect for an evening surrounded by nature.
+</p>
+
+<p class="dress-note">
+<strong>Kindly note:</strong> White and ivory are reserved for the bride. We invite you to choose from the suggested tones below.
+</p>
+
 <p class="color-title">Suggested colors</p>
+
 <div class="color-palette" aria-label="Suggested wedding colors">
 <span class="color-circle color-blush" aria-label="Soft blush"></span>
 <span class="color-circle color-rose" aria-label="Dusty rose"></span>
@@ -485,6 +553,7 @@ img{max-width:100%}
 <section class="link-section reveal">
 <p class="section-kicker">Gifts</p>
 <h2 class="section-title">Registry</h2>
+
 <div class="link-card">
 <a class="link-block" href="https://www.amazon.com/registries/gl/create?registryType=custom&ref_=ggr_emp_custom" target="_blank" rel="noopener">
 <span class="link-block-title">View Registry</span>
@@ -497,6 +566,7 @@ img{max-width:100%}
 <section class="link-section reveal">
 <p class="section-kicker">Save the date</p>
 <h2 class="section-title">Keep Our Day With You</h2>
+
 <div class="link-card">
 <a class="link-block" href="https://calendar.google.com/calendar/u/0/r?hl=en" target="_blank" rel="noopener">
 <span class="link-block-title">Add to Calendar</span>
@@ -509,12 +579,16 @@ img{max-width:100%}
 <section class="rsvp-section reveal">
 <p class="section-kicker">We hope you can join us</p>
 <h2 class="section-title">RSVP</h2>
+
 <div class="rsvp-buttons">
 <a class="rsvp-button" href="#" onclick="return false;">Online RSVP</a>
 <a class="rsvp-button" href="mailto:mrs.lacunza@gmail.com">RSVP by Email</a>
 <a class="rsvp-button" href="sms:+19316192063">Text to RSVP</a>
 </div>
-<p class="rsvp-note">Three RSVP options are available. Choose the one that best suits your celebration.</p>
+
+<p class="rsvp-note">
+Three RSVP options are available. Choose the one that best suits your celebration.
+</p>
 </section>
 
 <!-- FAQ -->
@@ -523,19 +597,23 @@ img{max-width:100%}
 <p class="section-kicker">Good to know</p>
 <h2 class="section-title">Details to Keep in Mind</h2>
 </div>
+
 <div class="info-list">
 <details class="info-item">
 <summary class="info-question">Can we bring the kids?</summary>
 <p class="info-answer">We absolutely love your little ones, but this celebration will be an adults-only event. We hope you enjoy the evening with us!</p>
 </details>
+
 <details class="info-item">
 <summary class="info-question">Unplugged ceremony?</summary>
 <p class="info-answer">We kindly ask that you put your phones away during the ceremony so everyone can be fully present for this special moment.</p>
 </details>
+
 <details class="info-item">
 <summary class="info-question">When should we arrive?</summary>
 <p class="info-answer">Please plan to arrive a little early so you have time to park, get settled, and be ready when the celebration begins.</p>
 </details>
+
 <details class="info-item">
 <summary class="info-question">What should I bring?</summary>
 <p class="info-answer">Bring your dancing shoes, your best wishes, and get ready to celebrate with us!</p>
@@ -548,7 +626,10 @@ img{max-width:100%}
 <p class="footer-script">We can't wait to celebrate with you</p>
 <p class="footer-message">Thank you for being part of our story. We are so excited to celebrate this beautiful day surrounded by the people we love most.</p>
 <p class="footer-names">Jessica &amp; Michael</p>
-<a class="boreal-button" href="https://borealdigitaldesign.github.io/" target="_blank" rel="noopener">Designed with love by Boreal Digital Design</a>
+
+<a class="boreal-button" href="https://borealdigitaldesign.github.io/" target="_blank" rel="noopener">
+Designed with love by Boreal Digital Design
+</a>
 </footer>
 
 </div>
@@ -558,6 +639,7 @@ img{max-width:100%}
 <audio id="weddingMusic" loop preload="auto">
 <source src="jessica-michael-gallery/A-Thousand-Years.mp3" type="audio/mpeg">
 </audio>
+
 <button id="musicButton" type="button" aria-label="Play music">🎵</button>
 
 <script>
@@ -574,9 +656,11 @@ setTimeout(checkVisibleSections,100);
 
 function checkVisibleSections(){
 const sections=document.querySelectorAll(".reveal:not(.visible)");
+
 sections.forEach(function(section){
 const rect=section.getBoundingClientRect();
 const trigger=window.innerHeight*.90;
+
 if(rect.top<trigger&&rect.bottom>0){
 section.classList.add("visible");
 }
