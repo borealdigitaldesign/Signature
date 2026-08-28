@@ -105,14 +105,13 @@ img{max-width:100%}
 .countdown-label{display:block;margin-top:7px;color:#8a7770;font-size:10px;letter-spacing:1.3px;text-transform:uppercase}
 
 /* ORDER OF DAY */
-.order-section{padding:78px 25px 82px;background:#f8f3ee;text-align:center}
-.order-intro{max-width:550px;margin:0 auto 38px}
-.order-list{max-width:600px;margin:0 auto;text-align:left}
-.order-item{display:grid;grid-template-columns:42px 1fr;column-gap:16px;position:relative;padding:0 0 28px;margin-bottom:25px;border-bottom:1px solid #dfd0cc}
-.order-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
-.order-mark{position:relative;width:24px;height:24px;margin:2px auto 0;color:#b8898b;font-family:Georgia,"Times New Roman",serif;font-size:24px;line-height:24px;text-align:center}
+.order-list{max-width:600px;margin:0 auto;position:relative}
+.order-item{position:relative;display:grid;grid-template-columns:1fr;justify-items:center;padding:0 0 42px;margin:0;text-align:center}
+.order-item:not(:last-child)::after{content:"";position:absolute;top:30px;bottom:0;left:50%;width:1px;background:#d8c4c0;transform:translateX(-50%)}
+.order-mark{position:relative;z-index:2;width:30px;height:30px;margin:0 auto 15px;display:flex;align-items:center;justify-content:center;background:#f8f3ee;color:#b8898b;font-family:Georgia,"Times New Roman",serif;font-size:25px;line-height:1}
+.order-content{position:relative;z-index:2}
 .order-time{margin:0 0 7px;color:#4d4142;font-family:"Baskerville","Times New Roman",Georgia,serif;font-size:21px;font-weight:bold}
-.order-description{margin:0;color:#806d70;font-size:14px;line-height:1.65}
+.order-description{max-width:500px;margin:0 auto;color:#806d70;font-size:14px;line-height:1.65}
 
 /* GALLERY */
 .gallery-section{padding:75px 18px 80px;background:#f8f3ee;text-align:center}
@@ -229,14 +228,12 @@ img{max-width:100%}
 .link-section{padding-left:15px;padding-right:15px}
 .boreal-button{width:100%;font-size:9px;letter-spacing:1.5px;padding:15px}
 }
-
 /* REDUCED MOTION */
 @media(prefers-reduced-motion:reduce){
 *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
-
 <body>
 
 <!-- OPENING -->
@@ -336,35 +333,35 @@ img{max-width:100%}
 <div class="order-list">
 <div class="order-item">
 <div class="order-mark">♡</div>
-<div>
+<div class="order-content">
 <p class="order-time">4:30 PM · Ceremony</p>
 <p class="order-description">Join us as we say “I do” and begin this beautiful new chapter together.</p>
 </div>
 </div>
 <div class="order-item">
 <div class="order-mark">♡</div>
-<div>
+<div class="order-content">
 <p class="order-time">5:15 PM · Cocktails</p>
 <p class="order-description">Raise a glass, enjoy a little something to sip, and celebrate with us.</p>
 </div>
 </div>
 <div class="order-item">
 <div class="order-mark">♡</div>
-<div>
+<div class="order-content">
 <p class="order-time">7:00 PM · Dinner</p>
 <p class="order-description">Good food, great company, and a table full of the people we love.</p>
 </div>
 </div>
 <div class="order-item">
 <div class="order-mark">♡</div>
-<div>
+<div class="order-content">
 <p class="order-time">9:30 PM · Dancing</p>
 <p class="order-description">Time to celebrate, dance, laugh, and make memories together.</p>
 </div>
 </div>
 </div>
 </section>
-
+  
 <!-- GALLERY DIVIDER -->
 <div class="page-divider gallery-divider reveal">
 <div class="divider-decoration">
