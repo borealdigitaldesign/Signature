@@ -12,23 +12,18 @@ button,a,summary{font-family:Georgia,"Times New Roman",serif}
 img{max-width:100%}
 
 /* OPENING */
-#opening{position:fixed;inset:0;z-index:10000;background:#f4ebe7;display:flex;align-items:center;justify-content:center;padding:22px;overflow:hidden;transition:opacity 1s ease,visibility 1s ease}
+#opening{position:fixed;inset:0;z-index:10000;background:#f4ebe7;display:flex;align-items:center;justify-content:center;padding:25px;overflow:hidden;transition:opacity 1s ease,visibility 1s ease}
 #opening.hide{opacity:0;visibility:hidden;pointer-events:none}
-.opening-card{position:relative;z-index:3;width:min(100%,560px);text-align:center}
-.opening-content{padding:15px 10px 20px}
-.opening-small{margin:0 0 5px;color:#9b7377;font-size:15px;letter-spacing:4px;line-height:1.5;text-transform:uppercase}
-.opening-heart{position:relative;width:min(100%,500px);aspect-ratio:1/1.03;margin:0 auto}
-.opening-heart::before,.opening-heart::after{content:"";position:absolute;inset:5%;border:1px solid rgba(184,137,139,.58);pointer-events:none}
-.opening-heart::before{border-radius:50% 50% 0 0;transform:rotate(-45deg) scale(.72,.72);transform-origin:50% 100%;left:-10%;top:10%;width:72%;height:72%}
-.opening-heart::after{border-radius:50% 50% 0 0;transform:rotate(45deg) scale(.72,.72);transform-origin:50% 100%;right:-10%;top:10%;width:72%;height:72%}
-.opening-heart-outline{position:absolute;inset:4% 6% 2%;z-index:1}
-.opening-heart-outline::before{content:"";position:absolute;inset:0;border:1px solid rgba(184,137,139,.72);clip-path:polygon(50% 96%,3% 48%,2% 35%,5% 22%,13% 12%,24% 7%,35% 8%,50% 23%,65% 8%,76% 7%,87% 12%,95% 22%,98% 35%,97% 48%);pointer-events:none}
-.opening-heart-content{position:absolute;z-index:2;inset:22% 12% 14%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
-.opening-names{margin:0;color:#4d4142;font-family:"Baskerville","Times New Roman",Georgia,serif;font-size:clamp(47px,11vw,72px);font-weight:normal;line-height:.95}
-.opening-name{display:block}
-.opening-amp{display:block;margin:7px 0 4px;color:#b8898b;font-family:"Snell Roundhand","Brush Script MT","Segoe Script",cursive;font-size:.65em;line-height:.8}
-.opening-date{margin:23px 0 0;color:#806d70;font-size:13px;letter-spacing:3px;text-transform:uppercase}
-.open-button{display:inline-block;min-width:185px;margin-top:5px;padding:14px 24px;border:1px solid #b8898b;border-radius:30px;background:rgba(255,255,255,.82);color:#76565e;text-decoration:none;font-size:10px;letter-spacing:2px;cursor:pointer;box-shadow:0 5px 18px rgba(100,65,70,.08);transition:transform .25s ease,background .25s ease}
+.opening-card{position:relative;z-index:3;width:min(100%,620px);text-align:center}
+.opening-small{margin:0 0 18px;color:#9b7377;font-size:clamp(14px,2.2vw,17px);letter-spacing:4px;line-height:1.4;text-transform:uppercase}
+.opening-heart{position:relative;width:min(100%,560px);margin:0 auto}
+.opening-heart svg{display:block;width:100%;height:auto;overflow:visible}
+.opening-heart svg path{fill:none;stroke:#c99598;stroke-width:1.25}
+.opening-heart-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7% 15% 4%}
+.opening-names{margin:0;color:#4d4142;font-family:"Baskerville","Times New Roman",Georgia,serif;font-size:clamp(47px,9vw,70px);font-weight:normal;line-height:.98}
+.opening-names .opening-amp{display:block;margin:7px 0 5px;font-family:"Snell Roundhand","Brush Script MT","Segoe Script",cursive;font-size:.58em;color:#b8898b;line-height:.7}
+.opening-date{margin:20px 0 0;color:#806d70;font-size:12px;letter-spacing:3px;text-transform:uppercase}
+.open-button{display:inline-block;margin-top:17px;min-width:185px;padding:14px 24px;border:1px solid #b8898b;border-radius:30px;background:rgba(255,255,255,.82);color:#76565e;text-decoration:none;font-size:10px;letter-spacing:2px;cursor:pointer;box-shadow:0 5px 18px rgba(100,65,70,.08);transition:transform .25s ease,background .25s ease}
 .open-button:hover{transform:translateY(-2px);background:#fff}
 
 /* OPENING DECORATIONS */
@@ -196,13 +191,14 @@ img{max-width:100%}
 
 /* MOBILE */
 @media(max-width:600px){
-.opening-content{padding-top:12px}
-.opening-small{font-size:13px;letter-spacing:3px;margin-bottom:3px}
-.opening-heart{width:min(100%,430px)}
-.opening-heart-content{inset:22% 11% 13%}
-.opening-names{font-size:clamp(43px,13vw,62px)}
-.opening-date{margin-top:19px;font-size:11px;letter-spacing:2.5px}
-.open-button{margin-top:3px}
+.opening-content{padding-top:8px}
+.opening-small{font-size:13px;letter-spacing:2.8px;margin-bottom:8px}
+.opening-heart{width:min(100%,390px);margin:0 auto}
+.opening-heart-content{inset:23% 12% 15%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.opening-names{font-size:clamp(42px,12vw,58px);line-height:.98}
+.opening-amp{font-size:.62em;margin:4px 0}
+.opening-date{margin-top:16px;font-size:11px;letter-spacing:2.3px}
+.open-button{margin-top:8px}
 .opening-petal{width:8px;height:12px}
 .hero{min-height:auto}
 .hero-image{min-height:auto}
@@ -253,33 +249,39 @@ img{max-width:100%}
 
 <!-- OPENING -->
 <section id="opening">
-<div class="opening-petals" aria-hidden="true">
-<span class="opening-petal"></span>
-<span class="opening-petal"></span>
-<span class="opening-petal"></span>
-<span class="opening-petal"></span>
-<span class="opening-petal"></span>
-<span class="opening-petal"></span>
-<span class="opening-petal"></span>
-<span class="opening-petal"></span>
-</div>
-<div class="opening-card">
-<div class="opening-content">
-<p class="opening-small">Together with their families</p>
-<div class="opening-heart" aria-label="Jessica and Michael wedding invitation">
-<div class="opening-heart-outline"></div>
-<div class="opening-heart-content">
-<h1 class="opening-names">
-<span class="opening-name">Jessica</span>
-<span class="opening-amp">&amp;</span>
-<span class="opening-name">Michael</span>
-</h1>
-<p class="opening-date">March 20, 2027</p>
-</div>
-</div>
-<button type="button" class="open-button" id="openInvitation">OPEN INVITATION</button>
-</div>
-</div>
+    <div class="opening-petals" aria-hidden="true">
+        <span class="opening-petal"></span>
+        <span class="opening-petal"></span>
+        <span class="opening-petal"></span>
+        <span class="opening-petal"></span>
+        <span class="opening-petal"></span>
+        <span class="opening-petal"></span>
+        <span class="opening-petal"></span>
+        <span class="opening-petal"></span>
+    </div>
+
+    <div class="opening-card">
+        <p class="opening-small">Together with their families</p>
+
+        <div class="opening-heart">
+            <svg viewBox="0 0 500 460" aria-hidden="true">
+                <path d="M250 425 L55 235 C-20 160 20 45 105 35 C165 28 215 58 250 105 C285 58 335 28 395 35 C480 45 520 160 445 235 Z"></path>
+            </svg>
+
+            <div class="opening-heart-content">
+                <h1 class="opening-names">
+                    Jessica
+                    <span class="opening-amp">&amp;</span>
+                    Michael
+                </h1>
+                <p class="opening-date">March 20, 2027</p>
+            </div>
+        </div>
+
+        <button type="button" class="open-button" id="openInvitation">
+            OPEN INVITATION
+        </button>
+    </div>
 </section>
 
 <!-- MAIN INVITATION -->
