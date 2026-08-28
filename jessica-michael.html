@@ -16,15 +16,36 @@ img{max-width:100%}
 #opening{position:fixed;inset:0;z-index:10000;background:#f4ebe7;display:flex;align-items:center;justify-content:center;padding:25px;overflow:hidden;transition:opacity 1s ease,visibility 1s ease}
 #opening.hide{opacity:0;visibility:hidden;pointer-events:none}
 .opening-card{position:relative;z-index:3;width:min(100%,620px);text-align:center}
-.opening-small{margin:0 0 18px;color:#9b7377;font-size:clamp(14px,2.2vw,17px);letter-spacing:4px;line-height:1.4;text-transform:uppercase}
-.opening-heart{position:relative;width:min(100%,560px);margin:0 auto}
-.opening-heart svg{display:block;width:100%;height:auto;overflow:visible}
-.opening-heart svg path{fill:none;stroke:#c99598;stroke-width:1.25}
-.opening-heart-content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:7% 15% 4%}
-.opening-names{margin:0;color:#4d4142;font-family:"Baskerville","Times New Roman",Georgia,serif;font-size:clamp(47px,9vw,70px);font-weight:normal;line-height:.98}
-.opening-names .opening-amp{display:block;margin:7px 0 5px;font-family:"Snell Roundhand","Brush Script MT","Segoe Script",cursive;font-size:.58em;color:#b8898b;line-height:.7}
-.opening-date{margin:18px 0 0;color:#806d70;font-size:12px;letter-spacing:3px;text-transform:uppercase}
-.open-button{display:inline-block;margin-top:17px;min-width:185px;padding:14px 24px;border:1px solid #b8898b;border-radius:30px;background:rgba(255,255,255,.82);color:#76565e;text-decoration:none;font-size:10px;letter-spacing:2px;cursor:pointer;box-shadow:0 5px 18px rgba(100,65,70,.08);transition:transform .25s ease,background .25s ease}
+.opening-small{margin:0 0 25px;color:#9b7377;font-size:clamp(14px,2.2vw,17px);letter-spacing:4px;line-height:1.4;text-transform:uppercase}
+
+/* OPENING MONOGRAM */
+.opening-monogram{position:relative;width:min(100%,520px);margin:0 auto;padding:48px 35px 42px}
+.opening-monogram::before{content:"";position:absolute;inset:0;border:1px solid #c99598;border-radius:2px}
+.opening-monogram::after{content:"";position:absolute;inset:10px;border:1px solid rgba(201,149,152,.38);border-radius:2px;pointer-events:none}
+.monogram-corner{position:absolute;color:#b8898b;font-size:22px;line-height:1}
+.monogram-corner.top-left{top:1px;left:15px;transform:rotate(-12deg)}
+.monogram-corner.top-right{top:1px;right:15px;transform:scaleX(-1) rotate(-12deg)}
+.monogram-corner.bottom-left{bottom:1px;left:15px;transform:rotate(168deg)}
+.monogram-corner.bottom-right{bottom:1px;right:15px;transform:scaleX(-1) rotate(168deg)}
+.opening-initials{position:relative;z-index:2;margin:0;color:#4d4142;font-family:"Baskerville","Times New Roman",Georgia,serif;font-size:clamp(72px,15vw,115px);font-weight:normal;line-height:.85;letter-spacing:7px}
+.opening-initials .initial-amp{display:inline-block;margin:0 5px;color:#b8898b;font-family:"Snell Roundhand","Brush Script MT","Segoe Script",cursive;font-size:.46em;vertical-align:middle;letter-spacing:0}
+.opening-couple{position:relative;z-index:2;margin:25px 0 0;color:#4d4142;font-family:"Baskerville","Times New Roman",Georgia,serif;font-size:clamp(22px,4.5vw,31px);font-weight:normal;letter-spacing:1px}
+.opening-line{width:55px;height:1px;margin:19px auto 16px;background:#c99598}
+.opening-date{position:relative;z-index:2;margin:0;color:#806d70;font-size:12px;letter-spacing:3px;text-transform:uppercase}
+.opening-botanical{position:absolute;z-index:2;width:85px;height:85px;pointer-events:none}
+.opening-botanical::before,.opening-botanical::after{content:"";position:absolute;display:block}
+.opening-botanical::before{left:40px;top:10px;width:1px;height:70px;background:#b8898b;transform:rotate(38deg);transform-origin:center}
+.opening-botanical::after{left:27px;top:25px;width:34px;height:18px;border-top:1px solid #b8898b;border-radius:50%;transform:rotate(-28deg)}
+.opening-botanical span{position:absolute;width:24px;height:13px;border-top:1px solid #b8898b;border-radius:50%}
+.opening-botanical span:nth-child(1){left:17px;top:35px;transform:rotate(-38deg)}
+.opening-botanical span:nth-child(2){left:39px;top:47px;transform:rotate(25deg)}
+.opening-botanical span:nth-child(3){left:51px;top:28px;transform:rotate(-18deg)}
+.opening-botanical.top-left{top:8px;left:4px;transform:rotate(-18deg)}
+.opening-botanical.top-right{top:8px;right:4px;transform:scaleX(-1) rotate(-18deg)}
+.opening-botanical.bottom-left{bottom:8px;left:4px;transform:rotate(198deg)}
+.opening-botanical.bottom-right{bottom:8px;right:4px;transform:scaleX(-1) rotate(198deg)}
+
+.open-button{display:inline-block;margin-top:27px;min-width:185px;padding:14px 24px;border:1px solid #b8898b;border-radius:30px;background:rgba(255,255,255,.82);color:#76565e;text-decoration:none;font-size:10px;letter-spacing:2px;cursor:pointer;box-shadow:0 5px 18px rgba(100,65,70,.08);transition:transform .25s ease,background .25s ease}
 .open-button:hover{transform:translateY(-2px);background:#fff}
 
 /* OPENING DECORATIONS */
@@ -216,13 +237,26 @@ img{max-width:100%}
 /* MOBILE */
 @media(max-width:600px){
 .opening{align-items:flex-start;justify-content:center;padding:0 18px}
-.opening-card{width:100%;max-width:430px;margin-top:clamp(110px,16vh,160px);transform:none}
-.opening-small{font-size:13px;letter-spacing:3px;margin:0 0 8px}
-.opening-heart{width:100%;max-width:430px}
-.opening-heart-content{inset:0;padding:7% 11% 4%}
-.opening-names{font-size:clamp(43px,13vw,62px)}
-.opening-date{margin-top:8px;font-size:11px;letter-spacing:2.5px}
-.open-button{margin-top:17px;min-width:195px;padding:14px 24px}
+.opening-card{width:100%;max-width:430px;margin-top:clamp(100px,14vh,150px);transform:none}
+.opening-small{font-size:13px;letter-spacing:3px;margin:0 0 18px}
+.opening-monogram{width:100%;padding:42px 20px 38px}
+.opening-initials{font-size:clamp(65px,18vw,90px);letter-spacing:4px}
+.opening-couple{margin-top:21px;font-size:clamp(20px,5.5vw,27px)}
+.opening-line{margin:16px auto 14px}
+.opening-date{font-size:11px;letter-spacing:2.5px}
+.opening-botanical{width:70px;height:70px}
+.opening-botanical::before{left:33px;top:8px;height:58px}
+.opening-botanical::after{left:22px;top:21px;width:29px;height:16px}
+.opening-botanical span{width:20px;height:11px}
+.opening-botanical span:nth-child(1){left:14px;top:29px}
+.opening-botanical span:nth-child(2){left:32px;top:40px}
+.opening-botanical span:nth-child(3){left:42px;top:24px}
+.opening-botanical.top-left{top:5px;left:1px}
+.opening-botanical.top-right{top:5px;right:1px}
+.opening-botanical.bottom-left{bottom:5px;left:1px}
+.opening-botanical.bottom-right{bottom:5px;right:1px}
+.monogram-corner{font-size:19px}
+.open-button{margin-top:23px;min-width:195px;padding:14px 24px}
 .opening-petal{width:8px;height:12px}
 
 .hero{min-height:auto}
@@ -284,40 +318,61 @@ img{max-width:100%}
 
 <!-- OPENING -->
 <section id="opening">
-    <div class="opening-petals" aria-hidden="true">
-        <span class="opening-petal"></span>
-        <span class="opening-petal"></span>
-        <span class="opening-petal"></span>
-        <span class="opening-petal"></span>
-        <span class="opening-petal"></span>
-        <span class="opening-petal"></span>
-        <span class="opening-petal"></span>
-        <span class="opening-petal"></span>
-    </div>
+<div class="opening-petals" aria-hidden="true">
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+<span class="opening-petal"></span>
+</div>
 
-    <div class="opening-card">
-        <p class="opening-small">Together with their families</p>
+<div class="opening-card">
 
-        <div class="opening-heart">
-            <svg viewBox="0 0 500 460" aria-hidden="true">
-                <path d="M250 425 L55 235 C-20 160 20 45 105 35 C165 28 215 58 250 105 C285 58 335 28 395 35 C480 45 520 160 445 235 Z"></path>
-            </svg>
+<p class="opening-small">With love</p>
 
-            <div class="opening-heart-content">
-                <h1 class="opening-names">
-                    Jessica
-                    <span class="opening-amp">&amp;</span>
-                    Michael
-                </h1>
-            </div>
-        </div>
+<div class="opening-monogram">
 
-        <p class="opening-date">March 20, 2027</p>
+<div class="opening-botanical top-left" aria-hidden="true">
+<span></span><span></span><span></span>
+</div>
 
-        <button type="button" class="open-button" id="openInvitation">
-            OPEN INVITATION
-        </button>
-    </div>
+<div class="opening-botanical top-right" aria-hidden="true">
+<span></span><span></span><span></span>
+</div>
+
+<div class="opening-botanical bottom-left" aria-hidden="true">
+<span></span><span></span><span></span>
+</div>
+
+<div class="opening-botanical bottom-right" aria-hidden="true">
+<span></span><span></span><span></span>
+</div>
+
+<span class="monogram-corner top-left" aria-hidden="true">❧</span>
+<span class="monogram-corner top-right" aria-hidden="true">❧</span>
+<span class="monogram-corner bottom-left" aria-hidden="true">❧</span>
+<span class="monogram-corner bottom-right" aria-hidden="true">❧</span>
+
+<h1 class="opening-initials">
+J <span class="initial-amp">&amp;</span> M
+</h1>
+
+<div class="opening-line"></div>
+
+<p class="opening-couple">Jessica &amp; Michael</p>
+
+<p class="opening-date">March 20, 2027</p>
+
+</div>
+
+<button type="button" class="open-button" id="openInvitation">
+OPEN INVITATION
+</button>
+
+</div>
 </section>
 
 <!-- MAIN INVITATION -->
@@ -400,6 +455,7 @@ img{max-width:100%}
 </div>
 
 <div class="order-list">
+
 <div class="order-item">
 <div class="order-side order-left">
 <p class="order-time">4:30 PM</p>
@@ -443,6 +499,7 @@ img{max-width:100%}
 <p class="order-name">Dancing</p>
 </div>
 </div>
+
 </div>
 </section>
 
@@ -461,6 +518,7 @@ img{max-width:100%}
 </div>
 
 <div class="gallery-grid">
+
 <div class="gallery-item">
 <img src="jessica-michael-gallery/Jessica-Michael_Gallery_01.png" alt="Jessica & Michael">
 </div>
@@ -480,6 +538,7 @@ img{max-width:100%}
 <div class="gallery-item">
 <img src="jessica-michael-gallery/Jessica-Michael_Gallery_05.png" alt="Jessica & Michael">
 </div>
+
 </div>
 </section>
 
@@ -592,6 +651,7 @@ Three RSVP options are available. Choose the one that best suits your celebratio
 </div>
 
 <div class="info-list">
+
 <details class="info-item">
 <summary class="info-question">Can we bring the kids?</summary>
 <p class="info-answer">We absolutely love your little ones, but this celebration will be an adults-only event. We hope you enjoy the evening with us!</p>
@@ -611,6 +671,7 @@ Three RSVP options are available. Choose the one that best suits your celebratio
 <summary class="info-question">What should I bring?</summary>
 <p class="info-answer">Bring your dancing shoes, your best wishes, and get ready to celebrate with us!</p>
 </details>
+
 </div>
 </section>
 
